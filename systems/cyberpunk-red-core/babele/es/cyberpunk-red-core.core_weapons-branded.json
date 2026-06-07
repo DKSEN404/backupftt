@@ -1,0 +1,188 @@
+{
+  "label": "Armas (de Marca)",
+  "mapping": {
+    "dvTable": "sistema.Tablavd"
+  },
+  "entries": {
+    "Arasaka Minami 10": {
+      "name": "Arasaka Minami 10",
+      "description": "<p>Un subfusil ocultable. +1 a Atacar.</p>\n",
+      "dvTable": "VD SMG"
+    },
+    "Arasaka Rapid Assault": {
+      "name": "Arasaka Rapid Assault",
+      "description": "<p>Una escopeta multiusos.</p>\n",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "Arasaka WSSA Sniper System": {
+      "name": "Arasaka WSSA Sniper System",
+      "description": "<p>Un rifle de francotirador de largo alcance. Cargador de 4 balas. +1 a Atacar.</p>\n",
+      "dvTable": "VD Rifle de Francotirador"
+    },
+    "Chadran Arms City Reaper": {
+      "name": "Chadran Arms City Reaper",
+      "description": "<p>Un subfusil pesado. Debido a su tamaño no se puede ocultar. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD SMG"
+    },
+    "Chadran Arms Jungle Reaper": {
+      "name": "Chadran Arms Jungle Reaper",
+      "description": "<p>Un rifle de asalto estándar. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Dai Lung Magnum": {
+      "name": "Dai Lung Magnum",
+      "description": "<p>Una pistola pesada ocultable. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Dai Lung Streetmaster": {
+      "name": "Dai Lung Streetmaster",
+      "description": "<p>Una pistola mediana ocultable. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Eagletech Bearcat": {
+      "name": "Eagletech Bearcat",
+      "description": "<p>Un arco plegable con el logotipo de Eagletech, recargado como parte de una acción de Ataque.</p>\n<p>+1 a la tirada de Atacar.</p>\n",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "Eagletech Scorpion": {
+      "name": "Eagletech Scorpion",
+      "description": "<p>Una ballesta elegante con el logotipo de Eagletech, recargada como parte de una acción de Ataque.</p>\n<p>+1 a la tirada de Atacar.</p>\n",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "Eagletech Striker": {
+      "name": "Eagletech Striker",
+      "description": "<p>Una ballesta con el logotipo de Eagletech, recargada como parte de una acción de Ataque.</p>\n",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "Eagletech Tomcat": {
+      "name": "Eagletech Tomcat",
+      "description": "<p>Un arco revitalizado con el logotipo de Eagletech, recargado como parte de una acción de Ataque.</p>\n",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "Federated Arms Super Chief": {
+      "name": "Federated Arms Super Chief",
+      "description": "<p>Una pistola muy pesada. No se puede ocultar. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Federated Arms Tech-Assault III": {
+      "name": "Federated Arms Tech-Assault III",
+      "description": "<p>Un subfusil ocultable. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD SMG"
+    },
+    "Federated Arms X-9mm": {
+      "name": "Federated Arms X-9mm",
+      "description": "<p>Una pistola mediana ocultable.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "GunMart Home Defender": {
+      "name": "GunMart Home Defender",
+      "description": "<p>Una escopeta multiusos. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "GunMart Hunter": {
+      "name": "GunMart Hunter",
+      "description": "<p>Una ballesta de calidad pobre con el logotipo de GunMart, recargada como parte de una acción de Ataque.</p>\n<p>Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "GunMart Sherwood": {
+      "name": "GunMart Sherwood",
+      "description": "<p>Un arco de calidad pobre con el logotipo de GunMart, recargado como parte de una acción de Ataque.</p>\n<p>Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Arcos y Ballestas"
+    },
+    "GunMart Snipe-Star": {
+      "name": "GunMart Snipe-Star",
+      "description": "<p>Un rifle de francotirador de largo alcance. Cargador de 4 balas. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Rifle de Francotirador"
+    },
+    "Militech Avenger": {
+      "name": "Militech Avenger",
+      "description": "<p>Una pistola mediana ocultable. +1 a Atacar.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Militech Boomer Buster": {
+      "name": "Militech Boomer Buster",
+      "description": "<p>Una pistola muy pesada. No se puede ocultar. +1 a Atacar.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Militech Bulldog": {
+      "name": "Militech Bulldog",
+      "description": "<p>Una escopeta multiusos. +1 a Atacar.</p>\n",
+      "dvTable": "VD Escopeta (Perdigones de escopeta)"
+    },
+    "Militech Dragon": {
+      "name": "Militech Dragon",
+      "description": "<p>Un rifle de asalto estándar. +1 a Atacar.</p>\n",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Militech Hotshot": {
+      "name": "Militech Hotshot",
+      "description": "<p>Saca la artillería pesada. Este lanzacohetes hará bastante daño. +1 a Atacar.</p>\n",
+      "dvTable": "VD Lanzacohetes"
+    },
+    "Militech Mini-Gat": {
+      "name": "Militech Mini-Gat",
+      "description": "<p>Un subfusil ocultable.</p>\n",
+      "dvTable": "VD SMG"
+    },
+    "Militech Mini-Grenade": {
+      "name": "Militech Mini-Grenade",
+      "description": "<p>Un lanzagranadas de alto impacto. Puedes usar una variedad de granadas con esto.</p>\n",
+      "dvTable": "VD Lanzagranadas"
+    },
+    "Militech Ronin": {
+      "name": "Militech Ronin",
+      "description": "<p>Un rifle de asalto estándar.</p>\n",
+      "dvTable": "VD Rifle de Asalto"
+    },
+    "Militech Urban": {
+      "name": "Militech Urban",
+      "description": "<p>Saca la artillería pesada. Este lanzacohetes hará bastante daño.</p>\n",
+      "dvTable": "VD Lanzacohetes"
+    },
+    "Militech Viper": {
+      "name": "Militech Viper",
+      "description": "<p>Un subfusil pesado. Debido a su tamaño no se puede ocultar. +1 a Atacar.</p>\n",
+      "dvTable": "VD SMG"
+    },
+    "Mustang Arms Mark III": {
+      "name": "Mustang Arms Mark III",
+      "description": "<p>Una pistola pesada ocultable.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Nomad Long Rifle": {
+      "name": "Nomad Long Rifle",
+      "description": "<p>Un rifle de francotirador de largo alcance, usado comúnmente por nómadas. Cargador de 4 balas.</p>\n",
+      "dvTable": "VD Rifle de Francotirador"
+    },
+    "Nova Cityhunter": {
+      "name": "Nova Cityhunter",
+      "description": "<p>Una pistola pesada ocultable. +1 a Atacar.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Sternmeyer P-35": {
+      "name": "Sternmeyer P-35",
+      "description": "<p>Una pistola muy pesada. No se puede ocultar.</p>\n",
+      "dvTable": "VD Pistola"
+    },
+    "Sternmeyer SMG-21": {
+      "name": "Sternmeyer SMG-21",
+      "description": "<p>Un subfusil pesado. Debido a su tamaño no se puede ocultar.</p>\n",
+      "dvTable": "VD SMG"
+    },
+    "Towa Manufacturing Type-G": {
+      "name": "Towa Manufacturing Type-G",
+      "description": "<p>Un lanzagranadas de alto impacto. Puedes usar una variedad de granadas con esto. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Lanzagranadas"
+    },
+    "Towa Manufacturing Type-R": {
+      "name": "Towa Manufacturing Type-R",
+      "description": "<p>Saca la artillería pesada. Este lanzacohetes hará bastante daño. Si sacas 1 en Ataque (pifia) el arma se atasca y requiere una acción para desatascarla.</p>\n",
+      "dvTable": "VD Lanzacohetes"
+    },
+    "Tsunami Arms Type-18": {
+      "name": "Tsunami Arms Type-18",
+      "description": "<p>Un lanzagranadas de alto impacto. Puedes usar una variedad de granadas con esto. +1 a Atacar.</p>\n",
+      "dvTable": "VD Lanzagranadas"
+    }
+  }
+}

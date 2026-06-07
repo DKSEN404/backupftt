@@ -1,0 +1,58 @@
+{
+   "label": "Los 12 Días de Gearmas",
+  "mapping": {},
+  "entries": {
+    "Esporma Environment Suit": {
+      "name": "Traje Ambiental Esporma",
+      "description": "<p>Traje blindado contra radiación. Protege al portador de la radiación y viene con un tanque de oxígeno que dura 30 minutos, recargable pasando una hora en aire limpio.</p>\n<p>Las nanomáquinas restauran 1 PC cada hora que no se pierda PC en la armadura.</p>\n"
+    },
+    "PackShield": {
+      "name": "PackShield",
+      "description": "<p>Híbrido de mochila-escudo antibalas con apariencia de ropa de negocios.</p>\n<p>Puede transportar objetos como un\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.y2a4HDhIl7FlJyD7]{Bolso de Transporte},\n  y equiparse en la mano como un escudo.</p>\n<p>Solo proporciona protección cuando está equipado en una mano.</p>\n<p>No puede instalarse en\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.I08f3hOEgAPNG4kJ]{Escudo Emergente}.</p>\n"
+    },
+    "Integrated Cyberscanner": {
+      "name": "Ciberescáner Integrado",
+      "description": "<p>Puede escanear a un individuo a 2m de distancia y proporcionar una lista de todo el ciberequipo instalado. Tarda 1 minuto. Muestra un error si se detecta una pieza de ciberequipo Endurecida, Mejorada por Técnico o Única.</p>\n"
+    },
+    "Xtra-Dex Smart Glove": {
+      "name": "Guante Inteligente Xtra-Dex",
+      "description": "<p>Un guante inteligente con soporte para ciberdedos. Tiene 2 Ranuras de Opción para Opciones de Ciberbrazo y se trata como un\n  @UUID[Compendium.cyberpunk-red-core.black-chrome_cyberware.Item.f9u0uhwRBcunP0gz]{Cibermano de Dedos Modulares}\n  a efectos de instalar los 5 ciberdedos compatibles*.</p>\n<p>Requiere Clavijas de Interfaz para acceder a las Opciones de Ciberbrazo/Ciberdedo instaladas en el guante.</p>\n<p>*La Cibermano de Dedos Modulares debe añadirse después de la instalación.</p>\n"
+    },
+    "Cybercam EX-1": {
+      "name": "Cibercámara EX-1",
+      "description": "<p>Cámara montada en la cabeza. Un Periodista que presente una historia en vivo mientras lleva la Cibercámara EX-1 gana +1 a Credibilidad al usar su habilidad de rol. Esto se acumula con bonificaciones basadas en evidencia.</p>\n"
+    },
+    "Cyberscanner": {
+      "name": "Ciberescáner",
+      "description": "<p>Puede escanear a un individuo a 2m de distancia y proporcionar una lista de todo el ciberequipo instalado. Tarda 1 minuto. Muestra un error si se detecta una pieza de ciberequipo Endurecida, Mejorada por Técnico o Única.</p>\n"
+    },
+    "Green Light Go Sniffer": {
+      "name": "Analizador Green Light Go",
+      "description": "<p>Analizador de Sustancias Químicas. Emite un brillo verde o rojo dependiendo de si la sustancia química (como drogas callejeras o productos farmacéuticos) está limpia o cortada/mezclada con otra sustancia.</p>\n"
+    },
+    "Ion Cuffs": {
+      "name": "Esposas Iónicas",
+      "description": "<p>Esposas diseñadas para ciborgs. Desactivan cualquier opción de ciberequipo no Endurecido instalada en el miembro que las esposas estén sujetando.\n  <span style=\"font-family: Jost\">CUERPO</span><span class=\"hgKElc\">≥</span\n  ><span style=\"font-family: Jost\">13 puede romperlas.</span>\n</p>\n"
+    },
+    "MagViewer": {
+      "name": "MagViewer",
+      "description": "<p>Prismáticos de avistamiento. Proporcionan detalle hasta 800m de distancia. Otorgan al usuario un +1 adicional a una tirada de ataque con una Prueba de Pericia Complementaria exitosa para asistir en atacar un objetivo a 51m o más de distancia, además de cualquier otra Prueba de Pericia Complementaria.</p>\n<p>No se acumula con\n  @UUID[Compendium.cyberpunk-red-core.core_upgrades.Item.Ryex0KHeeDzPQwmN]{Mira de Francotirador} ni\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.uApwuxpuIJMe47Vn]{Teleópticas}.</p>\n"
+    },
+    "Master Mechanic's Tool Kit": {
+      "name": "Kit de Herramientas del Maestro Mecánico",
+      "description": "<p>Cofre de herramientas masivo. Proporciona +4 a múltiples pericias al hacer pruebas de Pericia de Creador. Es lo suficientemente grande como para considerarse Cobertura de Acero Grueso, requiere CUERPO 10 para moverlo.</p>\n"
+    },
+    "MiniMag Speakers": {
+      "name": "Altavoces MiniMag",
+      "description": "<p>Altavoces magnéticos pequeños. Pueden reproducir audio desde un Agente conectado a 100m de distancia.</p>\n"
+    },
+    "Smartsticks": {
+      "name": "Baquetas Inteligentes",
+      "description": "<p><span style=\"font-family: Jost\">Baquetas inteligentes. Otorgan al usuario un +1 a las pruebas de Tocar Instrumento (Batería) mientras se usan. No se acumula con otros bonificadores a Tocar Instrumento.</span></p>\n"
+    },
+    "Metrocar": {
+      "name": "Metrocoche",
+      "description": "<p>Un coche compacto y barato diseñado para conducir en ciudad.</p>\n"
+    }
+  }
+}

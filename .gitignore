@@ -1,0 +1,9 @@
+# Foundry modules - pesados o dinamicos
+modules/JB2A_DnD5e/
+
+# Utilidades locales, no son assets de juego
+tokenizer/
+uploaded-chat-images/
+
+# Zips grandes de modulos
+modules/*.zip

@@ -1,0 +1,80 @@
+{
+  "id": "quick-insert",
+  "title": "Quick Insert - Search Widget",
+  "description": "Quickly find actors, items, spells etc. and insert them wherever you need them right now - the map, character sheets, roll tables, journals, you name it. <br /> <ul><li>Open with Ctrl + Space (default)</li> <li>Hold Shift to select more than one result</li> <li>Drag and drop directly from the search results</li></ul>",
+  "version": "3.7.1",
+  "authors": [
+    {
+      "name": "Sunspots",
+      "url": "https://gitlab.com/sunspots",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "quick-insert.js"
+  ],
+  "styles": [
+    "quick-insert.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json",
+      "flags": {}
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json",
+      "flags": {}
+    },
+    {
+      "lang": "it",
+      "name": "Italiano",
+      "path": "lang/it.json",
+      "flags": {}
+    },
+    {
+      "lang": "cn",
+      "name": "中文（简体）",
+      "path": "lang/zh_Hans.json",
+      "flags": {}
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt_BR.json",
+      "flags": {}
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json",
+      "flags": {}
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "12.324",
+    "verified": "13.350"
+  },
+  "url": "https://gitlab.com/fvtt-modules-lab/quick-insert",
+  "manifest": "https://gitlab.com/fvtt-modules-lab/quick-insert/-/releases/permalink/latest/downloads/module.json",
+  "download": "https://gitlab.com/fvtt-modules-lab/quick-insert/-/releases/3.7.1/downloads/quick-insert-v3.7.1.zip",
+  "license": "MIT",
+  "readme": "https://gitlab.com/fvtt-modules-lab/quick-insert",
+  "bugs": "https://gitlab.com/fvtt-modules-lab/quick-insert/-/issues",
+  "changelog": "https://gitlab.com/fvtt-modules-lab/quick-insert/-/blob/master/CHANGELOG.md"
+}

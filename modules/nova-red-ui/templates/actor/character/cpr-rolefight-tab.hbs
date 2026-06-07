@@ -1,0 +1,44 @@
+<div class="rolefight-tab-content">
+  {{#if (cprCompare fightData.fightOptions "===" "both")}}
+    <div class="fight-state-nav">
+      {{#if (cprCompare fightData.fightState "===" "Meatspace")}}
+        <span class="fight-state-active">{{localize "CPR.characterSheet.bottomPane.fight.meat"}}</span>
+        <span class="fight-state-sep">|</span>
+        <a class="toggle-fight-state" data-state="Netspace">{{localize "CPR.characterSheet.bottomPane.fight.net"}}</a>
+      {{else}}
+        <a class="toggle-fight-state" data-state="Meatspace">{{localize "CPR.characterSheet.bottomPane.fight.meat"}}</a>
+        <span class="fight-state-sep">|</span>
+        <span class="fight-state-active">{{localize "CPR.characterSheet.bottomPane.fight.net"}}</span>
+      {{/if}}
+    </div>
+  {{/if}}
+  {{#if (cprCompare fightData.fightState "===" "Meatspace")}}
+    <div class="role-section">
+      {{> "systems/cyberpunk-red-core/templates/actor/character/bottom-pane/cpr-role-tab.hbs"}}
+    </div>
+    <div class="injuries-section">
+      {{> "systems/cyberpunk-red-core/templates/actor/character/bottom-pane/fight/cpr-criticalInjuries.hbs"}}
+    </div>
+    <div class="combat-section">
+      <div class="armor-section">
+        <li class="items-header flexrow">
+          <span class="item-name section-name text-nowrap text-padding-left-smallest">{{localize "CPR.global.itemTypes.armor"}}</span>
+        </li>
+        {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/cpr-armor-list.hbs"}}
+      </div>
+      <div class="weapon-section">
+        {{#if (cprIsEmpty actor.system.weapons.equipped)}}
+          <li class="items-header flexrow">
+            <span class="text-padding-left-smallest">{{localize "CPR.characterSheet.bottomPane.fight.weapons"}}</span>
+          </li>
+        {{/if}}
+        {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/cpr-weapons-list.hbs"}}
+      </div>
+    </div>
+  {{/if}}
+  {{#if (cprCompare fightData.fightState "===" "Netspace")}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/netrunning/cpr-netActions.hbs"}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/netrunning/cpr-installedPrograms.hbs"}}
+    {{> "systems/cyberpunk-red-core/templates/actor/mixin/netrunning/cpr-rezzedPrograms.hbs"}}
+  {{/if}}
+</div>

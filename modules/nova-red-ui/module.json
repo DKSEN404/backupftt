@@ -1,0 +1,26 @@
+{
+  "id": "nova-red-ui",
+  "title": "Nova Red UI",
+  "description": "Tema ámbar sobre negro para Cyberpunk RED Core con efecto Glass Interface. Tema CSS puro sin modificación de hojas. Basado en el módulo original scifi-ui de iotech, modificado y adaptado por SEN404 para Nova-Red Hub.",
+  "version": "1.2.1",
+  "authors": [
+    {
+      "name": "SEN404"
+    },
+    {
+      "name": "iotech",
+      "url": "https://foundryvtt.com/community/iotech"
+    }
+  ],
+  "styles": [ "scifiui.css" ],
+  "esmodules": [ "scifiui.js" ],
+  "packs": [],
+  "url": "https://github.com/DKSEN404/nova-red-ui",
+  "manifest": "https://github.com/DKSEN404/nova-red-ui/releases/download/v1.2.1/module.json",
+  "download": "https://github.com/DKSEN404/nova-red-ui/releases/download/v1.2.1/module.zip",
+  "compatibility": {
+    "minimum": 12,
+    "verified": 12,
+    "maximum": 12
+  }
+}

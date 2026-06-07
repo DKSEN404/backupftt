@@ -1,0 +1,103 @@
+.dfal {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.dfal aside {
+  display: grid;
+  grid-template-rows: 385px auto;
+  width: 200px;
+  flex: auto 0;
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+  border-right: thin solid rgba(0, 0, 0, 0.4);
+}
+.dfal aside ol {
+  grid-row: 1;
+  list-style: none;
+  margin: 0 0 7px 0;
+  padding: 6px;
+  border: thin solid black;
+  border-radius: 4px;
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.5333333333);
+}
+.dfal aside li {
+  border: thin solid black;
+  margin: 0.25em 0;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.dfal aside li a {
+  visibility: hidden;
+  float: right;
+}
+.dfal aside li:hover {
+  box-shadow: 0 0 4px 0px orangered;
+  border-color: red;
+  cursor: pointer;
+}
+.dfal aside li:hover a {
+  visibility: visible;
+}
+.dfal aside button {
+  grid-row: 2;
+}
+.dfal li.active {
+  background: url(../../../ui/parchment.jpg) repeat;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: red;
+}
+.dfal li.active:hover {
+  cursor: default;
+  box-shadow: none;
+}
+.dfal main {
+  flex: 1 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.dfal main > table {
+  grid-row: 1;
+}
+.dfal main > table td:nth-child(2) {
+  text-align: right;
+}
+.dfal main > table a {
+  margin-right: 5px;
+}
+.dfal main > table input[name=offset] {
+  margin-right: 5px;
+  width: 70px;
+}
+.dfal main > section {
+  grid-row: 2;
+  border: solid thin rgba(0, 0, 0, 0.4);
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5333333333);
+}
+.dfal main > section div {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 0.25em;
+  padding: 0.25em;
+  background-color: rgba(255, 255, 255, 0.5333333333);
+  border: thin solid black;
+  border-radius: 5px;
+  align-items: center;
+}
+.dfal main > section div input[type=checked] {
+  flex: 0 0;
+}
+.dfal main > section div label {
+  flex: 1 0;
+}
+.dfal main > section div input[type=number] {
+  width: 100px;
+}
+.dfal main > section div input[type=color] {
+  width: 100px;
+}

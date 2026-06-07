@@ -1,0 +1,13 @@
+<div class="mook-tab2-content">
+  <div class="mook-special-area">
+    {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-gear.hbs"}}
+  </div>
+  <div class="mook-notes-area">
+    <div class="mook-notes-header items-header flexrow">
+      <span class="item-name section-name text-nowrap text-padding-left-smallest text-semi">{{localize "CPR.global.generic.notes"}}</span>
+    </div>
+    <div class="mook-notes-content">
+      {{editor enrichedHTML.systemInformationNotes target="system.information.notes" button=true owner=owner editable=editable engine="prosemirror"}}
+    </div>
+  </div>
+</div>

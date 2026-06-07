@@ -1,0 +1,11 @@
+<div class="profile-tab-content">
+  <div class="skills-section">
+    <div class="skills-filter-bar">
+      <input class="filter-contents" type="text" value="{{options.cprContentFilter}}" placeholder="{{localize 'CPR.characterSheet.leftPane.filter.placeholder'}}"/>
+      <a><i class="fas fa-xmark reset-content-filter" data-tooltip="{{localize "CPR.actorSheets.clearFilter"}}"></i></a>
+    </div>
+    <div class="skills-content">
+      {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/cpr-skills.hbs"}}
+    </div>
+  </div>
+</div>

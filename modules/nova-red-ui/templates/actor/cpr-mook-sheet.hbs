@@ -1,0 +1,16 @@
+<form>
+  <div class="mook-sheet-vertical sheet-vertical">
+    <nav class="navtabs-side" data-group="primary">
+      <a class="tab-button" data-tab="combat-skills" data-tooltip="{{localize "CPR.mookSheet.vertical.combatSkills"}}"><i class="fa-solid fa-bolt"></i></a>
+      <a class="tab-button" data-tab="equipment" data-tooltip="{{localize "CPR.mookSheet.vertical.equipment"}}"><i class="fa-solid fa-microchip"></i></a>
+    </nav>
+    <div class="tab-content-vertical">
+      <div class="tab" data-group="primary" data-tab="combat-skills">
+        {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-tab1.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="equipment">
+        {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-tab2.hbs"}}
+      </div>
+    </div>
+  </div>
+</form>

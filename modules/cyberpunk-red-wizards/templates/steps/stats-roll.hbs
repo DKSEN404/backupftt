@@ -1,0 +1,40 @@
+<div class="crw-step-stats">
+  <div class="crw-roll-header">
+    <span class="crw-label">{{roleName}} — {{localize "crw.stats.title"}}</span>
+    <button type="button" class="crw-btn-roll" data-action="rollStats">
+      <i class="fas fa-dice-d20"></i>
+      {{#if (eq method "streetrat")}}
+        {{localize "crw.stats.roll"}}
+      {{else}}
+        {{localize "crw.stats.rollAll"}}
+      {{/if}}
+    </button>
+  </div>
+
+  <table class="crw-stat-table">
+    <thead>
+      <tr>
+        <th></th>
+        {{#each templateCols}}
+        <th class="{{#if this.selected}}crw-selected-col{{/if}}">{{this.label}}</th>
+        {{/each}}
+        {{#if (eq method "edgerunner")}}
+        <th></th>
+        {{/if}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each statRows}}
+      <tr class="{{#if this.dimmed}}crw-dimmed{{/if}}">
+        <td class="crw-stat-label">{{this.abbr}}</td>
+        {{#each this.values}}
+        <td class="crw-val{{#if this.selected}} crw-selected{{/if}}" data-stat="{{../key}}" data-col="{{this.col}}">{{this.value}}</td>
+        {{/each}}
+        {{#if (eq ../method "edgerunner")}}
+        <td><button type="button" class="crw-stat-dice-btn" data-action="rollStat" data-stat="{{this.key}}"><i class="fas fa-dice-d6"></i></button></td>
+        {{/if}}
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,54 @@
+{
+  "id": "nova-red-theme",
+  "title": "Nova Red Theme",
+  "description": "Provides additional visual themes for Cyberpunk RED Core system: Nova Red (Amber), Bluewire (Electric), Afterlife (CP2077), and Afterlife 2 (Neon).",
+  "version": "0.0.4",
+  "authors": [
+    {
+      "name": "DKSEN404",
+      "url": "https://github.com/DKSEN404",
+      "discord": "dksen404"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12",
+    "maximum": "12"
+  },
+  "scripts": [],
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/nova-red-theme.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "cyberpunk-red-core",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.92.0",
+          "verified": "0.92.4"
+        }
+      }
+    ]
+  },
+  "manifest": "https://github.com/DKSEN404/nova-red-theme/releases/latest/download/module.json",
+  "download": "https://github.com/DKSEN404/nova-red-theme/releases/download/v0.0.4/module.zip",
+  "url": "https://github.com/DKSEN404/nova-red-theme",
+  "readme": "README.md",
+  "license": "MIT"
+}

@@ -1,0 +1,35 @@
+<form>
+  <div class="character-vertical sheet-vertical">
+    <nav class="navtabs-side" data-group="primary">
+      <a class="tab-button" data-tab="profile" data-tooltip="{{localize "CPR.characterSheet.vertical.profile"}}"><i class="fa-solid fa-user"></i></a>
+      <a class="tab-button" data-tab="role-fight" data-tooltip="{{localize "CPR.characterSheet.vertical.roleFight"}}"><i class="fa-solid fa-diamond"></i></a>
+      <a class="tab-button" data-tab="gear" data-tooltip="{{localize "CPR.characterSheet.vertical.gear"}}"><i class="fa-solid fa-sack"></i></a>
+      <a class="tab-button" data-tab="cyberware" data-tooltip="{{localize "CPR.characterSheet.vertical.cyberware"}}"><i class="fa-solid fa-microchip"></i></a>
+      <a class="tab-button" data-tab="lifepath" data-tooltip="{{localize "CPR.characterSheet.vertical.lifepath"}}"><i class="fa-solid fa-heart"></i></a>
+      <a class="tab-button" data-tab="effects" data-tooltip="{{localize "CPR.characterSheet.vertical.effects"}}"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+    </nav>
+    <div class="sheet-content-vertical">
+      {{> "systems/cyberpunk-red-core/templates/actor/character/cpr-sheet-header.hbs"}}
+      <div class="tab-content-vertical">
+        <div class="tab" data-group="primary" data-tab="profile">
+          {{> "systems/cyberpunk-red-core/templates/actor/character/cpr-profile-tab.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="role-fight">
+        {{> "systems/cyberpunk-red-core/templates/actor/character/cpr-rolefight-tab.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="gear">
+        {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/cpr-gear.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="cyberware">
+        {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/cpr-cyberware.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="lifepath">
+        {{> "systems/cyberpunk-red-core/templates/actor/character/bottom-pane/cpr-lifepath-tab.hbs"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="effects">
+        {{> "systems/cyberpunk-red-core/templates/actor/character/right-pane/cpr-effects.hbs"}}
+      </div>
+      </div>
+    </div>
+  </div>
+</form>

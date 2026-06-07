@@ -1,0 +1,36 @@
+<div class="crw-step-gear">
+  <h3 class="crw-section-title">{{localize "crw.gear.presetTitle"}}</h3>
+  <p class="crw-section-subtitle">{{localize "crw.gear.presetHint"}}</p>
+
+  {{#each categories}}
+  <div class="crw-gear-category">
+    <h4 class="crw-category-title">{{label}}</h4>
+    {{#each items}}
+    {{#if choice}}
+    <div class="crw-gear-choice">
+      <span class="crw-gear-choice-label">{{localize "crw.gear.chooseOne"}}</span>
+      <select class="crw-gear-select crw-input" name="choice-{{choiceIndex}}">
+        {{#each choice}}
+        <option value="{{this}}" {{#if (eq this ../selected)}}selected{{/if}}>{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
+    {{else}}
+    <div class="crw-gear-item">
+      <span class="crw-gear-name">{{name}}</span>
+      {{#if quantity}}<span class="crw-gear-qty">&times;{{quantity}}</span>{{/if}}
+
+
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+  {{/each}}
+
+  <div class="crw-gear-summary">
+    <div class="crw-gear-summary-row">
+      <span>{{localize "crw.gear.remaining"}}</span>
+      <span class="crw-gear-summary-value">{{startingCash}} ed</span>
+    </div>
+  </div>
+</div>

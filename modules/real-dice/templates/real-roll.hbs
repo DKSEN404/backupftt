@@ -1,0 +1,25 @@
+<form action="submit">
+
+    {{#if rollFormula}}<p class="real-roll-formula notes">{{rollFormula}}</p>{{/if}}
+
+    <div class="real-roll-container {{#if multiRow}}real-roll-multi-row{{/if}}">
+
+        {{#each dieTerms as |dieTerm|}}
+        <div class="form-group">
+            {{#each dieTerm.inputs as |input|}}
+            <input class="real-roll-input" style="background-image: url('{{dieTerm._image}}');" type="number" min="0"
+                {{#unless dieTerm.exploding}}max="{{dieTerm.faces}}"{{/unless}} placeholder="d{{dieTerm.faces}}" name="{{dieTerm.index}}.{{@index}}">
+            {{/each}}
+        {{#if dieTerm.totalInput}}
+        <input data-tooltip="{{localize "real-dice.real-roll.totalBoxMessage"}}" class="real-roll-input total" style="background-image: url('../modules/real-dice/assets/rolling-dices.svg');" type="number" min="{{dieTerm.totalInput.min}}"
+                max="{{dieTerm.totalInput.max}}" placeholder="{{dieTerm.expression}}" name="{{dieTerm.index}}.total">
+        {{/if}}
+        </div>
+        {{/each}}
+
+    </div>
+
+    <footer>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i></button>
+    </footer>
+</form>

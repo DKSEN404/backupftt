@@ -1,0 +1,89 @@
+<div class="profile-header">
+  <div class="profile-portrait">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" data-tooltip="{{actor.name}}"/>
+    {{#if isHardened.value}}
+      <i class="fa-solid fa-shield overlay" data-tooltip="{{localize 'CPR.characterSheet.leftPane.hardened.reasons.isHardened'}}<hr/>{{#each isHardened.reasons as |reason|}}<p>{{reason}}</p>{{/each}}"></i>
+    {{/if}}
+    <div class="profile-wound">
+      <span class="wound-value">
+        {{#with actor.system.derivedStats.currentWoundState as |state|}}
+          {{#if (cprCompare state "===" "notWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_none.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.notWounded"}}"/>{{/if}}
+          {{#if (cprCompare state "===" "lightlyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_lightly.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.lightlyWounded"}}"/>{{/if}}
+          {{#if (cprCompare state "===" "seriouslyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_seriously.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.seriouslyWounded"}}"/>{{/if}}
+          {{#if (cprCompare state "===" "mortallyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_mortally.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.mortallyWounded"}}"/>{{/if}}
+        {{/with}}
+      </span>
+    </div>
+    <div class="pp-notification-btn{{#if ppHasPoints}} pp-has-points{{/if}}" data-tooltip="{{#if ppHasPoints}}Threshold superado, edgerunner — mejoras listas{{else}}PP insuficiente, gonk — seguí farmeando{{/if}}">
+      <i class="fa-solid fa-cross"></i>
+    </div>
+  </div>
+  <div class="profile-info">
+    <div class="profile-name">
+      <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize "CPR.characterSheet.leftPane.handle"}}"/>
+    </div>
+    <div class="profile-role">
+      <input name="system.roleInfo.activeRole" type="text" value="{{actor.system.roleInfo.activeRole}}" placeholder="{{localize "CPR.global.generic.role"}}"/>
+    </div>
+    <div class="profile-eb">
+      <span class="eb-label">{{localize "CPR.characterSheet.rightPane.eurobucks.eurobucks"}}:</span>
+      <span class="eb-value">{{cprNumberFormat actor.system.wealth.value}} eb</span>
+      <a class="eurobucks-open-ledger" data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}"><i class="fas fa-note-sticky"></i></a>
+    </div>
+    <div class="profile-hp">
+      <span class="hp-label">{{localize "CPR.global.generic.hitpoints"}}:</span>
+      <input class="hp-value" name="system.derivedStats.hp.value" type="number" value="{{actor.system.derivedStats.hp.value}}" step="1"/>
+      <span class="hp-sep">/</span>
+      <input class="hp-value" name="system.derivedStats.hp.max" type="number" value="{{actor.system.derivedStats.hp.max}}" step="1"/>
+      <a class="calculate-hp" data-tooltip="{{localize "CPR.characterSheet.leftPane.calculateMaxHp"}}"><i class="fa-solid fa-calculator"></i></a>
+    </div>
+    <div class="profile-humanity">
+      <span class="hum-label">{{localize "CPR.characterSheet.leftPane.humanity"}}:</span>
+      <input class="hum-value" name="system.derivedStats.humanity.value" type="number" value="{{actor.system.derivedStats.humanity.value}}" step="1"/>
+      <span class="hum-sep">/</span>
+      <input class="hum-value" name="system.derivedStats.humanity.max" type="number" value="{{actor.system.derivedStats.humanity.max}}" step="1"/>
+      <a class="calculate-humanity" data-tooltip="{{localize "CPR.characterSheet.leftPane.calculateMaxHumanity"}}"><i class="fa-solid fa-calculator"></i></a>
+    </div>
+  </div>
+  <div class="profile-meta">
+    <div class="profile-reputation">
+      <a class="rollable reputation-label"
+         data-roll-type="facedown"
+         data-roll-title="{{localize "CPR.characterSheet.bottomPane.reputation"}}"
+         data-tooltip="{{localize "CPR.global.generic.facedown"}}">
+        {{localize "CPR.characterSheet.bottomPane.reputation"}}:
+      </a>
+      <span class="reputation-value">{{actor.system.reputation.value}}</span>
+      <a class="reputation-open-ledger" data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}">
+        <i class="fas fa-note-sticky"></i>
+      </a>
+    </div>
+    <div class="profile-deathsave">
+      <a class="rollable deathsave-label" data-roll-title="{{localize "CPR.characterSheet.leftPane.deathSave.title"}}" data-tooltip="{{localize "CPR.characterSheet.leftPane.deathSave.roll"}}" data-roll-type="deathsave">{{localize "CPR.characterSheet.leftPane.deathSave.title"}}</a>
+      <span class="deathsave-value" data-tooltip="{{localize "CPR.global.generic.deathPenalty"}}: {{actor.system.derivedStats.deathSave.penalty}}</br>{{localize "CPR.characterSheet.leftPane.deathSave.hoverCriticalInjuryPenalty"}}: {{actor.system.derivedStats.deathSave.basePenalty}}">{{actor.system.derivedStats.deathSave.value}}</span>
+      <a class="increase-deathsave-value"><i class="far fa-circle-up" data-tooltip="{{localize "CPR.characterSheet.leftPane.deathSave.increase"}}"></i></a>
+      <a class="reset-deathsave-value" data-tooltip="{{localize "CPR.characterSheet.leftPane.deathSave.reset"}}"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+    </div>
+    <div class="profile-ip">
+      <span class="ip-label">{{localize "CPR.characterSheet.leftPane.improvementPointsShort"}}:</span>
+      <span class="ip-value">{{cprNumberFormat actor.system.improvementPoints.value}}</span>
+      <a class="improvement-points-open-ledger" data-tooltip="{{localize "CPR.ledger.ledgerOpen"}}"><i class="fas fa-note-sticky"></i></a>
+    </div>
+  </div>
+  <div class="stats-bar">
+    {{#each actor.system.stats as |stat s|}}
+      <div class="stat-block">
+        <a class="rollable stat-label" data-roll-type="stat" data-roll-title="{{s}}" data-tooltip="{{cprGetStatToolTip s}}">{{localize (cprFindConfigValue "statList" s)}}</a>
+        {{#unless (cprIsDefined this.max)}}
+          <input class="stat-value" name="system.stats.{{s}}.value" type="text" data-dtype="Number" value="{{this.value}}"/>
+        {{else}}
+          <div class="stat-of">
+            <input class="stat-value" name="system.stats.{{s}}.value" type="text" data-dtype="Number" value="{{this.value}}"/>
+            <span class="stat-sep">/</span>
+            <input class="stat-value" name="system.stats.{{s}}.max" type="text" data-dtype="Number" value="{{this.max}}"/>
+          </div>
+        {{/unless}}
+      </div>
+    {{/each}}
+  </div>
+</div>

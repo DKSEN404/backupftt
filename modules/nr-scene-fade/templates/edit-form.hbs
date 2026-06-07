@@ -1,0 +1,172 @@
+<form class="nr-edit-form flexcol" autocomplete="off" novalidate data-content-mode="{{contentMode}}">
+  <nav class="tabs" data-group="primary">
+    <a class="item active" data-tab="content"><i class="fas fa-file-lines"></i> {{localize "nr-scene-fade.form.tab.content"}}</a>
+    <a class="item" data-tab="effects"><i class="fas fa-wand-magic-sparkles"></i> {{localize "nr-scene-fade.form.tab.effects"}}</a>
+    <a class="item" data-tab="options"><i class="fas fa-gear"></i> {{localize "nr-scene-fade.form.tab.options"}}</a>
+  </nav>
+
+  <div class="tabbed-content">
+    <div class="tab scrollable active" data-tab="content" data-group="primary">
+      {{#if isPreset}}
+      <h2>{{localize "nr-scene-fade.form.preset.header"}}</h2>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.preset.label"}}</label>
+        <div class="form-fields">
+          <select name="presetId" data-dtype="String">
+            {{selectOptions presets selected=presetId labelAttr="label" valueAttr="id"}}
+          </select>
+        </div>
+      </div>
+      {{/if}}
+
+      <h2>{{localize "nr-scene-fade.form.content.header"}}</h2>
+
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.content.contentMode.label"}}</label>
+        <div class="form-fields">
+          <select name="contentMode" data-dtype="String">
+            <option value="richtext" {{#if (eq contentMode "richtext")}}selected{{/if}}>{{localize "nr-scene-fade.form.content.contentMode.richtext"}}</option>
+            <option value="html" {{#if (eq contentMode "html")}}selected{{/if}}>{{localize "nr-scene-fade.form.content.contentMode.html"}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="nr-editor-section">
+        <div class="form-group">
+          <label>{{localize "nr-scene-fade.form.content.fontColor.label"}}</label>
+          <div class="form-fields">
+            <color-picker name="fontColor" value="{{fontColor}}"></color-picker>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{localize "nr-scene-fade.form.content.fontFamily.label"}}</label>
+          <div class="form-fields">
+            <input name="fontFamily" type="text" value="{{fontFamily}}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{localize "nr-scene-fade.form.content.fontSize.label"}}</label>
+          <div class="form-fields">
+            <input name="fontSize" type="number" value="{{fontSize}}">
+          </div>
+        </div>
+        {{#if isEdit}}
+        <div class="form-group editor-box">
+          {{editor content target="content" button=false editable=true engine="prosemirror" collaborate=false}}
+        </div>
+        {{/if}}
+      </div>
+
+      <div class="nr-code-section">
+        <div class="form-group">
+          <label>{{localize "nr-scene-fade.form.content.rawContent.label"}}</label>
+          <div class="form-fields">
+            <textarea name="rawContent" class="nr-code-editor" rows="15">{{rawContent}}</textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>{{localize "nr-scene-fade.form.content.customCSS.label"}}</label>
+          <div class="form-fields">
+            <textarea name="customCSS" class="nr-code-editor nr-code-editor--css" rows="8" placeholder="{{localize "nr-scene-fade.form.content.customCSS.placeholder"}}">{{customCSS}}</textarea>
+          </div>
+        </div>
+      </div>
+
+      <h2>{{localize "nr-scene-fade.form.background.header"}}</h2>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.background.bgImg.label"}}</label>
+        <div class="form-fields">
+          <file-picker name="bgImg" type="imagevideo" value="{{bgImg}}"></file-picker>
+          <input class="imagevideo" type="text" value="{{bgImg}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.background.bgColor.label"}}</label>
+        <div class="form-fields">
+          <color-picker name="bgColor" value="{{bgColor}}"></color-picker>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.background.bgOpacity.label"}}</label>
+        <div class="form-fields">
+          <input name="bgOpacity" type="number" step="0.05" min="0" max="1" value="{{bgOpacity}}">
+        </div>
+      </div>
+    </div>
+
+    <div class="tab scrollable" data-tab="effects" data-group="primary">
+      <h2>{{localize "nr-scene-fade.form.effects.dom.label"}}</h2>
+      <div class="effects-grid">
+        {{#each domEffects}}
+        <label class="checkbox">
+          <input type="checkbox" name="domEffects" value="{{this.id}}" {{#if (contains ../selectedDomEffects this.id)}}checked{{/if}}>
+          {{this.name}}
+        </label>
+        {{/each}}
+      </div>
+
+      <h2>{{localize "nr-scene-fade.form.effects.canvas.label"}}</h2>
+      <div class="effects-grid">
+        {{#each canvasEffects}}
+        <label class="checkbox">
+          <input type="checkbox" name="canvasEffects" value="{{this.id}}" {{#if (contains ../selectedCanvasEffects this.id)}}checked{{/if}}>
+          {{this.name}}
+        </label>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="tab scrollable" data-tab="options" data-group="primary">
+      <h2>{{localize "nr-scene-fade.form.transition.header"}}</h2>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.transition.fadeIn.label"}}</label>
+        <div class="form-fields">
+          <input name="fadeIn" type="number" step="50" min="0" value="{{fadeIn}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.transition.delay.label"}}</label>
+        <div class="form-fields">
+          <input name="delay" type="number" step="500" min="0" value="{{delay}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.transition.fadeOut.label"}}</label>
+        <div class="form-fields">
+          <input name="fadeOut" type="number" step="50" min="0" value="{{fadeOut}}">
+        </div>
+      </div>
+
+      <h2>{{localize "nr-scene-fade.form.other.header"}}</h2>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.other.gmEndAll.label"}}</label>
+        <input type="checkbox" name="gmEndAll" data-dtype="Boolean" {{checked gmEndAll}}>
+      </div>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.other.gmHide.label"}}</label>
+        <input type="checkbox" name="gmHide" data-dtype="Boolean" {{checked gmHide}}>
+      </div>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.other.activateScene.label"}}</label>
+        <input type="checkbox" name="activateScene" data-dtype="Boolean" {{checked activateScene}}>
+      </div>
+      <div class="form-group">
+        <label>{{localize "nr-scene-fade.form.other.fullscreen.label"}}</label>
+        <input type="checkbox" name="fullscreen" data-dtype="Boolean" {{checked fullscreen}}>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    {{#unless isEdit}}
+    <button type="button" data-action="reset">
+      <i class="fas fa-arrow-rotate-left"></i>
+      {{localize "nr-scene-fade.form.reset"}}
+    </button>
+    {{/unless}}
+    <button type="submit">
+      <i class="fas fa-solid fa-floppy-disk"></i>
+      {{localize "nr-scene-fade.form.save"}}
+    </button>
+  </footer>
+</form>

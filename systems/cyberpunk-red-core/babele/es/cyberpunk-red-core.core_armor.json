@@ -1,0 +1,78 @@
+{
+  "label": "Blindaje",
+  "mapping": {},
+  "entries": {
+    "Bodyweight Suit": {
+      "name": "Traje Corporal",
+      "description": "<p>Traje de piel blindado de Netrunner. Puede almacenar Cyberdeck y admitir enchufes de interfaz. No se puede comprar en dos piezas. Usar siempre tanto en la Cabeza como en el Cuerpo. Añade una Ranura de opción de Hardware a Cyberterminal conectado. Sin penalidad de armadura.</p>"
+    },
+    "Bullet Proof Shield": {
+      "name": "Escudo a prueba de balas",
+      "description": "<p>Requiere un brazo y tiene vida reducida por daño.</p>"
+    },
+    "Flak (Body)": {
+      "name": "Flak (Cuerpo)",
+      "description": "<p>Armadura de metal para resistir los golpes más poderosos. -4 para REF, DES y MOV.</p>"
+    },
+    "Flak (Head)": {
+      "name": "Flak (cabeza)",
+      "description": "<p>Armadura de metal para resistir los golpes más poderosos a la cabeza. -4 a REF, DES y MOV.</p>"
+    },
+    "Heavy Armorjack (Body)": {
+      "name": "Armorjack Pesado (cuerpo)",
+      "description": "<p>Versión más pesada de una Armorjack. -2 a REF, DES y MOV.</p>"
+    },
+    "Heavy Armorjack (Head)": {
+      "name": "Armorjack Pesado (cabeza)",
+      "description": "<p>Versión más pesada de una Armorjack. -2 a REF, DES y MOV.</p>"
+    },
+    "Kevlar® (Body)": {
+      "name": "Kevlar® (Cuerpo)",
+      "description": "<p>Ropa de Kevlar estándar. Sin penalización de armadura.</p>\n"
+    },
+    "Kevlar® (Head)": {
+      "name": "Kevlar® (Cabeza)",
+      "description": "<p>Kevlar estándar para tu cabeza. Sin penalización de armadura.</p>\n"
+    },
+    "Leathers (Body)": {
+      "name": "Cueros (Cuerpo)",
+      "description": "<p>Armadura de cuero sencilla. Sin penalización de armadura.</p>"
+    },
+    "Leathers (Head)": {
+      "name": "Cueros (Cabeza)",
+      "description": "<p>Armadura de cuero simple para tu cabeza. Sin penalización de armadura.</p>"
+    },
+    "Light Armorjack (Body)": {
+      "name": "Armorjack Ligero (Cuerpo)",
+      "description": "<p>Versión ligera de una Armorjack. Sin penalización de armadura.</p>"
+    },
+    "Light Armorjack (Head)": {
+      "name": "Armorjack Ligero (Cabeza)",
+      "description": "<p>Versión ligera de un Armorjack para tu cabeza. Sin pena de armadura.</p>"
+    },
+    "Medium Armorjack (Body)": {
+      "name": "Armorjack Medio (Cuerpo)",
+      "description": "<p>Versión media de una Armorjack. -2 a REF, DES, y MOV.</p>"
+    },
+    "Medium Armorjack (Head)": {
+      "name": "Armorjack Medio (Cabeza)",
+      "description": "<p>Versión media de un Armorjack para tu cabeza. -2 a REF, DES y MOV.</p>"
+    },
+    "Metalgear® (Body)": {
+      "name": "Metalgear® (Cuerpo)",
+      "description": "<p>La armadura más pesada y poderosa en circulación. -4 a REF, DES y MOV.</p>\n"
+    },
+    "Metalgear® (Head)": {
+      "name": "Metalgear® (Cabeza)",
+      "description": "<p>La armadura más pesada y poderosa en circulación. Protege tu cabeza. -4 a REF, DES y MOV.</p>\n"
+    },
+    "Skin Weave": {
+      "name": "Tejido Dérmico",
+      "description": "<p>Objeto de Armadura para el Cyberware de Tejido de Dérmico.</p>"
+    },
+    "Subdermal Armor": {
+      "name": "Armadura Subdermal",
+      "description": "<p>Objeto de Armadura para el Cyberware de Blindaje Subcutáneo.</p>"
+    }
+  }
+}

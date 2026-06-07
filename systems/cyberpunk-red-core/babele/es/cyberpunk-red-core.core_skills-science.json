@@ -1,0 +1,38 @@
+{
+   "label": "Pericias (Ciencia)",
+  "mapping": {},
+  "entries": {
+    "Science (Anthropology)": {
+      "name": "Ciencia (Antropología)",
+      "description": ""
+    },
+    "Science (Biology)": {
+      "name": "Ciencia (Biología)",
+      "description": ""
+    },
+    "Science (Chemistry)": {
+      "name": "Ciencia (Química)",
+      "description": ""
+    },
+    "Science (Geology)": {
+      "name": "Ciencia (Geología)",
+      "description": ""
+    },
+    "Science (History)": {
+      "name": "Ciencia (Historia)",
+      "description": ""
+    },
+    "Science (Mathematics)": {
+      "name": "Ciencia (Matemáticas)",
+      "description": ""
+    },
+    "Science (Physics)": {
+      "name": "Ciencia (Física)",
+      "description": ""
+    },
+    "Science (Zoology)": {
+      "name": "Ciencia (Zoología)",
+      "description": ""
+    }
+  }
+}

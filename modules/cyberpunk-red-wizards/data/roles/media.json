@@ -1,0 +1,235 @@
+{
+  "id": "media",
+  "nameKey": "crw.roles.media",
+  "abilityKey": "crw.roleAbility.media",
+  "statTemplates": [
+    [6, 6, 5, 5, 8, 7, 5, 7, 5, 7],
+    [8, 7, 7, 3, 6, 6, 6, 5, 6, 8],
+    [6, 7, 7, 5, 6, 8, 5, 5, 5, 7],
+    [6, 5, 7, 5, 6, 7, 5, 5, 6, 6],
+    [6, 6, 7, 4, 8, 7, 6, 7, 5, 8],
+    [7, 5, 5, 4, 8, 7, 6, 7, 5, 8],
+    [8, 5, 6, 3, 7, 6, 6, 5, 6, 7],
+    [6, 5, 6, 5, 6, 8, 6, 6, 7, 8],
+    [7, 7, 5, 4, 6, 7, 6, 5, 6, 7],
+    [7, 6, 6, 3, 7, 6, 7, 6, 7, 6]
+  ],
+  "skills": [
+    {
+      "name": "Acting",
+      "fixedLevel": 4,
+      "stat": "cool",
+      "category": "performanceSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Athletics",
+      "fixedLevel": 2,
+      "stat": "dex",
+      "category": "bodySkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Brawling",
+      "fixedLevel": 2,
+      "stat": "dex",
+      "category": "bodySkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Composition",
+      "fixedLevel": 6,
+      "stat": "int",
+      "category": "performanceSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Concentration",
+      "fixedLevel": 2,
+      "stat": "will",
+      "category": "awarenessSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Conversation",
+      "fixedLevel": 6,
+      "stat": "emp",
+      "category": "socialSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Deduction",
+      "fixedLevel": 4,
+      "stat": "int",
+      "category": "awarenessSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Education",
+      "fixedLevel": 4,
+      "stat": "int",
+      "category": "educationSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Evasion",
+      "fixedLevel": 2,
+      "stat": "dex",
+      "category": "bodySkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "First Aid",
+      "fixedLevel": 2,
+      "stat": "tech",
+      "category": "techniqueSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Handgun",
+      "fixedLevel": 4,
+      "stat": "ref",
+      "category": "fightingSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Human Perception",
+      "fixedLevel": 6,
+      "stat": "emp",
+      "category": "socialSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Language (Streetslang)",
+      "fixedLevel": 4,
+      "stat": "int",
+      "category": "educationSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Local Expert",
+      "fixedLevel": 4,
+      "stat": "int",
+      "category": "educationSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Perception",
+      "fixedLevel": 4,
+      "stat": "int",
+      "category": "awarenessSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Persuasion",
+      "fixedLevel": 6,
+      "stat": "cool",
+      "category": "socialSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Personal Grooming",
+      "fixedLevel": 2,
+      "stat": "cool",
+      "category": "socialSkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Resist Torture/Drugs",
+      "fixedLevel": 2,
+      "stat": "will",
+      "category": "bodySkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Stealth",
+      "fixedLevel": 2,
+      "stat": "dex",
+      "category": "bodySkills",
+      "difficulty": "typical"
+    },
+    {
+      "name": "Streetwise",
+      "fixedLevel": 4,
+      "stat": "cool",
+      "category": "socialSkills",
+      "difficulty": "typical"
+    }
+  ],
+  "equipment": {
+    "weapons": [
+      {
+        "packName": "core_weapons",
+        "itemName": "Medium Pistol"
+      },
+      {
+        "choice": [
+          "Light Melee",
+          "Medium Melee"
+        ],
+        "packName": "core_weapons"
+      }
+    ],
+    "armor": [
+      {
+        "packName": "core_armor",
+        "itemName": "Leathers (Body)"
+      },
+      {
+        "packName": "core_armor",
+        "itemName": "Leathers (Head)"
+      }
+    ],
+    "gear": [
+      {
+        "packName": "core_gear",
+        "itemName": "Agent"
+      },
+      {
+        "packName": "core_gear",
+        "itemName": "Video Camera"
+      },
+      {
+        "packName": "core_gear",
+        "itemName": "Audio Recorder"
+      }
+    ],
+    "ammo": [
+      {
+        "packName": "core_ammo",
+        "itemName": "Medium Pistol (Basic)",
+        "quantity": 50
+      }
+    ],
+    "cyberware": [
+      {
+        "packName": "core_cyberware",
+        "itemName": "Neural Link",
+        "humanityLoss": 2
+      },
+      {
+        "packName": "core_cyberware",
+        "itemName": "Cybereye",
+        "humanityLoss": 7
+      },
+      {
+        "choice": [
+          "Chyron",
+          "MicroVideo"
+        ],
+        "packName": "core_cyberware"
+      }
+    ]
+  },
+  "startingCash": 500,
+  "lifestyle": {
+    "housing": {
+      "description": "Cube Hotel",
+      "cost": 1000
+    },
+    "lifeStyle": {
+      "description": "Kibble",
+      "cost": 100
+    }
+  }
+}

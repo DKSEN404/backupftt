@@ -1,0 +1,104 @@
+const MODULE_ID = "update-your-password";
+
+function updatePasswordDialog(li) {
+    li = li instanceof HTMLElement ? li : li[0];
+    const targetUser = game.users.get(li.dataset.userId);
+    let otherUserHeader = "";
+    if (targetUser.id !== game.user.id) {
+        otherUserHeader = `<h3>${game.i18n.format("update-your-password.dialog.other-user-header", { name: targetUser.name })}</h3>`;
+    }
+    new Dialog({
+        title: game.i18n.localize("update-your-password.dialog.title"),
+        content: `
+        <form>
+            ${otherUserHeader}
+            <div class="form-group">
+                <label for="${MODULE_ID}-new-password">
+                    ${game.i18n.localize("update-your-password.dialog.label.contents")}
+                </label>
+                <div class="form-fields">
+                    <input id="${MODULE_ID}-new-password" type="password" name="newPassword">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="${MODULE_ID}-confirm-new-password">
+                    ${game.i18n.localize("update-your-password.dialog.confirm-label.contents")}
+                </label>
+                <div class="form-fields">
+                    <input id="${MODULE_ID}-confirm-new-password" type="password" name="confirmNewPassword">
+                </div>
+            </div>
+        </form>`,
+        buttons: {
+            apply: {
+                icon: '<i class="fa-solid fa-check"></i>',
+                label: game.i18n.localize("update-your-password.dialog.buttons.apply.label"),
+                callback: async (html) => {
+                    const fde = new FormDataExtended(html[0].querySelector("form"));
+                    const { newPassword, confirmNewPassword } = fde.object;
+                    if (newPassword !== confirmNewPassword) {
+                        return ui.notifications.error(
+                            "update-your-password.notifications.error.confirm-not-match",
+                            { localize: true }
+                        );
+                    }
+                    if (newPassword.length !== 0) {
+                        await targetUser.update({ password: newPassword });
+                        if (targetUser.id === game.user.id) {
+                            game.logOut();
+                        }
+                    }
+                },
+            },
+            cancel: {
+                icon: '<i class="fa-solid fa-times"></i>',
+                label: game.i18n.localize("update-your-password.dialog.buttons.cancel.label"),
+            },
+        },
+        default: "apply",
+    }).render(true);
+}
+
+Hooks.on("init", function () {
+    game.settings.register(MODULE_ID, "show-user-context-menu", {
+        name: "update-your-password.settings.show-user-context-menu.name",
+        hint: "update-your-password.settings.show-user-context-menu.hint",
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: true,
+        requiresReload: true,
+    });
+    game.settings.register(MODULE_ID, "expose-dialog-function", {
+        name: "update-your-password.settings.expose-dialog-function.name",
+        hint: "update-your-password.settings.expose-dialog-function.hint",
+        scope: "world",
+        config: true,
+        type: Boolean,
+        default: false,
+        requiresReload: true,
+    });
+});
+
+Hooks.on("getUserContextOptions", function (html, contextOptions) {
+    contextOptions.push({
+        name: game.i18n.localize("update-your-password.tool.title"),
+        icon: '<i class="fa-solid fa-key"></i>',
+        callback: updatePasswordDialog,
+        condition: (li) => {
+            li = li instanceof HTMLElement ? li : li[0];
+            return (
+                game.users.get(li.dataset.userId).canUserModify(game.user, "update") &&
+                game.settings.get(MODULE_ID, "show-user-context-menu")
+            );
+        },
+    });
+});
+
+Hooks.on("ready", function () {
+    if (game.settings.get(MODULE_ID, "expose-dialog-function")) {
+        game.updateYourPassword = Object.freeze({
+            showDialog: updatePasswordDialog,
+        });
+    }
+});

@@ -1,0 +1,114 @@
+{
+  "nr-scene-fade": {
+    "settings": {
+      "defaultOptions": {
+        "name": "Default Transition Options",
+        "hint": "Configure the default options for new scene transitions.",
+        "label": "Open Default Options",
+        "title": "Default Transition Options"
+      },
+      "showJournalHeader": {
+        "name": "Show Journal Header Button",
+        "hint": "Add a play transition button to journal sheet headers for GM.",
+        "label": "Enable"
+      }
+    },
+    "context": {
+      "stopTransition": "Stop Transition",
+      "playTransition": "Play Transition",
+      "createTransition": "Create Transition",
+      "editTransition": "Edit Transition",
+      "deleteTransition": "Delete Transition",
+      "playFromJournal": "Play as Transition"
+    },
+    "gallery": {
+      "gallery": "Scene Gallery",
+      "activate": "Activate Scene",
+      "preload": "Preload Scene",
+      "play": "Play Transition",
+      "edit": "Edit Transition",
+      "collapseAll": "Collapse All"
+    },
+    "editTransition": "Edit Scene Transition",
+    "form": {
+      "tab": {
+        "content": "Content",
+        "effects": "Effects",
+        "options": "Options"
+      },
+      "preset": {
+        "header": "Preset",
+        "label": "Visual Theme"
+      },
+      "content": {
+        "header": "Content",
+        "contentMode": {
+          "label": "Content Mode",
+          "richtext": "Rich Text Editor",
+          "html": "Direct HTML"
+        },
+        "rawContent": { "label": "HTML Content" },
+        "customCSS": {
+          "label": "Custom CSS",
+          "placeholder": "@keyframes, .class styles, etc."
+        },
+        "fontColor": { "label": "Font Color" },
+        "fontFamily": { "label": "Font Family" },
+        "fontSize": { "label": "Font Size" }
+      },
+      "background": {
+        "header": "Background",
+        "bgImg": { "label": "Image / Video URL" },
+        "bgColor": { "label": "Background Color" },
+        "bgOpacity": { "label": "Opacity" }
+      },
+      "effects": {
+        "header": "Effects",
+        "dom": { "label": "DOM Overlay Effects" },
+        "canvas": { "label": "Canvas Animated Effects" }
+      },
+      "transition": {
+        "header": "Timing",
+        "fadeIn": { "label": "Fade In (ms)" },
+        "delay": { "label": "Hold Duration (ms)" },
+        "fadeOut": { "label": "Fade Out (ms)" }
+      },
+      "other": {
+        "header": "Options",
+        "gmEndAll": { "label": "GM can end all transitions" },
+        "gmHide": { "label": "Hide transition from GM" },
+        "activateScene": { "label": "Activate scene on play" },
+        "fullscreen": { "label": "Fullscreen mode (bypass content wrapper)" }
+      },
+      "save": "Save",
+      "reset": "Reset to Defaults"
+    },
+    "close": "Close",
+    "presets": {
+      "amber-terminal": {
+        "label": "Amber Terminal",
+        "description": "Warm amber glow — classic terminal aesthetic."
+      },
+      "netrunner": {
+        "label": "Netrunner",
+        "description": "Green-on-black with digital rain — hacker immersion."
+      },
+      "combat": {
+        "label": "Combat",
+        "description": "Red alert — glitchy, aggressive, high tension."
+      },
+      "mystery": {
+        "label": "Mystery",
+        "description": "Purple chromatic aberration — data corruption aesthetic."
+      },
+      "road": {
+        "label": "Road",
+        "description": "Orange neon — desert highway cyberpunk."
+      },
+      "afterlife": {
+        "label": "Afterlife",
+        "description": "Magenta neon — maximalist cyberpunk club atmosphere."
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "id": "ghorin-journal-scenes",
+    "title": "Open scene from journal",
+    "description": "Opening a scene from a link in a journal by clicking an the link",
+    "version": "1.1.1",
+    "compatibility": {
+      "minimum": "12",
+      "verified": "13.346",
+      "maximum": "13"
+    },
+    "authors": [
+      {
+        "name": "Ghorin",
+        "url": "ostolinde.free.fr",
+        "discord": "ghorin"
+      }
+    ],
+    "esmodules": [
+        "main.mjs"
+    ],
+    "url": "https://gitlab.com/ghorin/ghorin-journal-scenes",
+    "manifest": "https://gitlab.com/ghorin/ghorin-journal-scenes/-/raw/main/module.json",
+    "download": "https://gitlab.com/ghorin/ghorin-journal-scenes/-/archive/1.1.1/ghorin-journal-scenes-1.1.1.zip"
+}

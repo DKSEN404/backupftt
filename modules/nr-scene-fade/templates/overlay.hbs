@@ -1,0 +1,31 @@
+<div id="nr-scene-fade-overlay" class="nr-visible" style="background-color:{{bgColor}}; opacity:0; z-index:{{zIndex}};">
+  {{#if customCSS}}<style>{{{customCSS}}}</style>{{/if}}
+  {{#if isVideo}}
+  <div class="nr-video-overlay" style="opacity:{{bgOpacity}}; background-color:{{bgColor}};"></div>
+  <video class="nr-bg-video" autoplay{{#if bgLoop}} loop{{/if}}{{#if bgMuted}} muted{{/if}}>
+    <source src="{{bgImg}}" type="{{sourceType}}">
+  </video>
+  {{else if bgImg}}
+  <div class="nr-bg-image" style="background-image:url({{bgImg}}); opacity:{{bgOpacity}}; background-size:{{bgSize}}; background-position:{{bgPos}};"></div>
+  {{/if}}
+  <div class="nr-content-wrapper">
+    {{#if fullscreen}}
+    {{{content}}}
+    {{else}}
+    <div class="nr-inner" id="nr-inner" style="
+      max-width:960px;
+      width:92%;
+      margin:0 auto;
+      padding:50px 60px;
+      border:1px solid {{accentColor}};
+      box-shadow:0 0 30px {{accentColor}}33, inset 0 0 30px {{accentColor}}11;
+      background:{{bgColor}}dd;
+      color:{{fontColor}};
+      font-size:{{fontSize}}px;
+    ">
+      {{{content}}}
+    </div>
+    {{/if}}
+  </div>
+  {{#if hasCanvasEffects}}<canvas id="nr-cfx-canvas"></canvas>{{/if}}
+</div>

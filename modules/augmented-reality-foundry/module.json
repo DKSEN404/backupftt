@@ -1,0 +1,66 @@
+{
+  "id": "augmented-reality-foundry",
+  "title": "Augmented Reality Cyberpunk City Kit",
+  "description": "The Holistic City Kit For Cyberpunk Roleplaying Games by Paul Gallagher",
+  "version": "1.0.5",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "David Y. Hudson",
+      "discord": "jendave",
+      "url": "https://jendave.itch.io/",
+      "flags": {}
+    },
+    {
+      "name": "Paul Gallagher",
+      "url": "https://neuralarchive.blogspot.com/",
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "name": "augmentedrealityrolltables",
+      "label": "Augmented Reality Roll Tables",
+      "path": "packs/augmented-reality-rolltables",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "augmentedrealitymacros",
+      "label": "Augmented Reality Macros",
+      "path": "packs/augmented-reality-macros",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Augmented Reality",
+      "packs": [
+        "augmentedrealityrolltables",
+        "augmentedrealitymacros"
+      ],
+      "color": null,
+      "folders": []
+    }
+  ],
+  "manifest": "https://github.com/jendave/augmented-reality-foundry/releases/latest/download/module.json",
+  "url": "https://github.com/jendave/augmented-reality-foundry",
+  "download": "https://github.com/jendave/augmented-reality-foundry/releases/download/1.0.5/module.zip",
+  "license": "https://raw.githubusercontent.com/jendave/augmented-reality-foundry/main/LICENSE",
+  "changelog": "https://raw.githubusercontent.com/jendave/augmented-reality-foundry/main/CHANGELOG.md",
+  "readme": "https://raw.githubusercontent.com/jendave/augmented-reality-foundry/main/README.md",
+  "bugs": "https://github.com/jendave/augmented-reality-foundry/issues"
+}

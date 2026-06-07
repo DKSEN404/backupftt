@@ -1,0 +1,114 @@
+{
+  "nr-scene-fade": {
+    "settings": {
+      "defaultOptions": {
+        "name": "Opciones por Defecto",
+        "hint": "Configura las opciones predeterminadas para nuevas transiciones de escena.",
+        "label": "Abrir Opciones por Defecto",
+        "title": "Opciones por Defecto"
+      },
+      "showJournalHeader": {
+        "name": "Mostrar botón en Journal",
+        "hint": "Agrega un botón de reproducción en el encabezado de las hojas de journal para el DJ.",
+        "label": "Activar"
+      }
+    },
+    "context": {
+      "stopTransition": "Detener Transición",
+      "playTransition": "Reproducir Transición",
+      "createTransition": "Crear Transición",
+      "editTransition": "Editar Transición",
+      "deleteTransition": "Eliminar Transición",
+      "playFromJournal": "Reproducir como Transición"
+    },
+    "gallery": {
+      "gallery": "Galería de Escenas",
+      "activate": "Activar Escena",
+      "preload": "Precargar Escena",
+      "play": "Reproducir Transición",
+      "edit": "Editar Transición",
+      "collapseAll": "Contraer todo"
+    },
+    "editTransition": "Editar Transición de Escena",
+    "form": {
+      "tab": {
+        "content": "Contenido",
+        "effects": "Efectos",
+        "options": "Opciones"
+      },
+      "preset": {
+        "header": "Preset",
+        "label": "Tema Visual"
+      },
+      "content": {
+        "header": "Contenido",
+        "contentMode": {
+          "label": "Modo de Contenido",
+          "richtext": "Editor de Texto",
+          "html": "HTML Directo"
+        },
+        "rawContent": { "label": "Contenido HTML" },
+        "customCSS": {
+          "label": "CSS Personalizado",
+          "placeholder": "@keyframes, estilos .class, etc."
+        },
+        "fontColor": { "label": "Color de Fuente" },
+        "fontFamily": { "label": "Familia de Fuente" },
+        "fontSize": { "label": "Tamaño de Fuente" }
+      },
+      "background": {
+        "header": "Fondo",
+        "bgImg": { "label": "URL de Imagen / Video" },
+        "bgColor": { "label": "Color de Fondo" },
+        "bgOpacity": { "label": "Opacidad" }
+      },
+      "effects": {
+        "header": "Efectos",
+        "dom": { "label": "Efectos DOM (Overlay)" },
+        "canvas": { "label": "Efectos Canvas (Animados)" }
+      },
+      "transition": {
+        "header": "Tiempos",
+        "fadeIn": { "label": "Entrada (ms)" },
+        "delay": { "label": "Duración (ms)" },
+        "fadeOut": { "label": "Salida (ms)" }
+      },
+      "other": {
+        "header": "Opciones",
+        "gmEndAll": { "label": "DJ puede terminar todas las transiciones" },
+        "gmHide": { "label": "Ocultar transición al DJ" },
+        "activateScene": { "label": "Activar escena al reproducir" },
+        "fullscreen": { "label": "Modo pantalla completa (sin contenedor interno)" }
+      },
+      "save": "Guardar",
+      "reset": "Restablecer Valores"
+    },
+    "close": "Cerrar",
+    "presets": {
+      "amber-terminal": {
+        "label": "Terminal Ámbar",
+        "description": "Resplandor ámbar cálido — estética terminal clásica."
+      },
+      "netrunner": {
+        "label": "Netrunner",
+        "description": "Verde sobre negro con lluvia digital — inmersión hacker."
+      },
+      "combat": {
+        "label": "Combate",
+        "description": "Alerta roja — glitch agresivo, alta tensión."
+      },
+      "mystery": {
+        "label": "Misterio",
+        "description": "Aberración cromática púrpura — estética de datos corruptos."
+      },
+      "road": {
+        "label": "Road",
+        "description": "Neón naranja — carretera desértica cyberpunk."
+      },
+      "afterlife": {
+        "label": "Afterlife",
+        "description": "Neón magenta — ambiente cyberpunk maximalista de club."
+      }
+    }
+  }
+}

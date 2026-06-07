@@ -1,0 +1,154 @@
+<div class="crw-import-container">
+  <div class="crw-import-scroll">
+    {{!-- Language selector --}}
+    <div class="crw-editor-row">
+      <div class="crw-editor-field">
+        <div class="crw-category-title">{{localize "crw.import.language"}}</div>
+        <select name="language" class="crw-input crw-select">
+          <option value="en" {{#if (eq language "en")}}selected{{/if}}>English</option>
+          <option value="pl" {{#if (eq language "pl")}}selected{{/if}}>Polski</option>
+        </select>
+      </div>
+    </div>
+
+    {{!-- Textarea --}}
+    <div class="crw-editor-field">
+      <div class="crw-category-title">{{localize "crw.import.paste"}}</div>
+      <textarea name="statblockText" class="crw-input crw-import-textarea">{{inputText}}</textarea>
+    </div>
+
+    {{!-- Parse button --}}
+    <div style="margin: 8px 0;">
+      <button type="button" class="crw-btn-parse" data-action="parse">
+        <i class="fas fa-search"></i> {{localize "crw.import.parse"}}
+      </button>
+    </div>
+
+    {{!-- Results --}}
+    {{#if hasResult}}
+      {{!-- Errors --}}
+      {{#if hasErrors}}
+      <div class="crw-import-messages crw-import-errors">
+        <div class="crw-category-title" style="color:var(--cpr-color-red)">{{localize "crw.import.errors"}}</div>
+        {{#each errors}}
+        <div class="crw-import-msg"><strong>{{this.section}}:</strong> {{this.message}}</div>
+        {{/each}}
+      </div>
+      {{/if}}
+
+      {{!-- Warnings --}}
+      {{#if hasWarnings}}
+      <div class="crw-import-messages crw-import-warnings">
+        <div class="crw-category-title" style="color:#ff9800">{{localize "crw.import.warnings"}}</div>
+        {{#each warnings}}
+        <div class="crw-import-msg"><strong>{{this.section}}:</strong> {{this.message}}</div>
+        {{/each}}
+      </div>
+      {{/if}}
+
+      {{!-- Confidence summary --}}
+      {{#if diagnosticsSummary}}
+      <div class="crw-import-messages crw-import-summary">
+        <div class="crw-category-title">{{localize "crw.import.confidence"}}</div>
+        <div class="crw-import-msg">
+          {{localize "crw.import.parsedSections"}}: {{diagnosticsSummary.found}} / {{diagnosticsSummary.total}}{{#if diagnosticsSummary.missing.length}} — {{localize "crw.import.missing"}}: {{diagnosticsSummary.missingLabel}}{{/if}}
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="crw-editor-field" style="margin-top:8px;">
+          <div class="crw-category-title">{{localize "crw.npc.editor.tier"}}</div>
+        <select name="importCategory" class="crw-input crw-select">
+          {{#each categories}}
+          <option value="{{this.name}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      {{!-- Preview --}}
+      {{#if template}}
+      <div class="crw-import-preview">
+        <div class="crw-category-title">{{localize "crw.npc.ui.stats"}}</div>
+        <div class="crw-npc-stat-grid">
+          {{#each stats}}
+          <div class="crw-npc-stat-cell">
+            <div class="crw-stat-abbr">{{this.abbr}}</div>
+            <div class="crw-npc-stat-value">{{this.value}}</div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="crw-npc-derived-row" style="margin-top:8px;">
+          <span><strong>{{localize "crw.npc.ui.hp"}}:</strong> {{template.hp}}</span>
+          <span><strong>{{localize "crw.npc.ui.seriousWound"}}:</strong> {{template.seriousWound}}</span>
+          <span><strong>{{localize "crw.npc.ui.deathSave"}}:</strong> {{template.deathSave}}</span>
+        </div>
+
+        {{#if template.armor.head}}
+        <div class="crw-category-title">{{localize "crw.npc.ui.armor"}}</div>
+        <div class="crw-npc-armor-row">
+          <span>{{localize "crw.npc.ui.head"}}: {{template.armor.head.name}} (SP {{template.armor.head.sp}})</span>
+          <span>{{localize "crw.npc.ui.body"}}: {{template.armor.body.name}} (SP {{template.armor.body.sp}})</span>
+        </div>
+        {{/if}}
+
+        {{#if template.weapons.length}}
+        <div class="crw-category-title">{{localize "crw.npc.ui.weapons"}}</div>
+        {{#each template.weapons}}
+        <div class="crw-npc-gear-row">
+          <span class="crw-npc-gear-name">{{this.itemName}}{{#if (eq this.quality "poor")}} (Poor){{/if}}{{#if (eq this.quality "excellent")}} (Excellent){{/if}}</span>
+          <span class="crw-npc-gear-detail">{{this.damage}}</span>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        {{#if template.cyberware.length}}
+        <div class="crw-category-title">{{localize "crw.npc.ui.cyberware"}}</div>
+        {{#each template.cyberware}}
+        <div class="crw-npc-gear-row">
+          <span class="crw-npc-gear-name">{{this.itemName}}</span>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        {{#if template.equipment.length}}
+        <div class="crw-category-title">{{localize "crw.npc.ui.equipment"}}</div>
+        {{#each template.equipment}}
+        <div class="crw-npc-gear-row">
+          <span class="crw-npc-gear-name">{{this.itemName}}</span>
+          {{#if (gt this.quantity 1)}}<span class="crw-npc-gear-detail">×{{this.quantity}}</span>{{/if}}
+        </div>
+        {{/each}}
+        {{/if}}
+
+        {{#if template.skills.length}}
+        <div class="crw-category-title">{{localize "crw.npc.ui.skills"}}</div>
+        <div class="crw-npc-skills-list">
+          {{#each template.skills}}
+          <div class="crw-npc-skill-row">
+            <span class="crw-skill-name">{{this.name}}</span>
+            <span class="crw-skill-level-badge">{{this.base}}</span>
+          </div>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+      {{/if}}
+    {{else}}
+      <div class="crw-import-empty">
+        <p>{{localize "crw.import.noInput"}}</p>
+      </div>
+    {{/if}}
+  </div>
+
+  {{!-- Footer --}}
+  {{#if hasResult}}
+  <div class="crw-editor-footer">
+    <button type="button" class="crw-btn-secondary" data-action="saveTemplate">
+      <i class="fas fa-save"></i> {{localize "crw.import.saveTemplate"}}
+    </button>
+    <button type="button" class="crw-btn-create" data-action="createNpc">
+      <i class="fas fa-plus"></i> {{localize "crw.import.createNpc"}}
+    </button>
+  </div>
+  {{/if}}
+</div>

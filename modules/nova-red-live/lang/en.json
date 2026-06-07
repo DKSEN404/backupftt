@@ -1,0 +1,57 @@
+{
+  "nova-red-live": {
+    "title": "Nova-Red Live",
+    "button": "Nova-Red Live",
+    "channelLabels": {
+      "music": "Music",
+      "ambience": "Ambience",
+      "effects": "Effects"
+    },
+    "settings": {
+      "channelVolume": {
+        "name": "Channel Volume",
+        "hint": "Per-channel volume settings"
+      },
+      "scenePresets": {
+        "name": "Scene Presets",
+        "hint": "Audio configurations linked to scenes"
+      },
+      "enabled": {
+        "name": "Enabled",
+        "hint": "Enable the Nova-Red Live module"
+      },
+      "hideOnStartup": {
+        "name": "Hide on Startup",
+        "hint": "Hide the mixer window when loading the world"
+      }
+    },
+    "import": {
+      "placeholder": "YouTube URL or search...",
+      "import": "Import",
+      "search": "Search",
+      "added": "Added: {name}",
+      "imported": "Imported {count} tracks from playlist",
+      "notFound": "Could not find anything for that URL/query",
+      "noAudioStreams": "No audio streams available for this video",
+      "pipedUnavailable": "Piped API instances are unavailable. Check your proxy or internet connection",
+      "proxyNotRunning": "YouTube import proxy not detected. Run nr-proxy.bat from the module folder and try again."
+    },
+    "controls": {
+      "play": "Play",
+      "pause": "Pause",
+      "stop": "Stop",
+      "loop": "Loop",
+      "clear": "Clear",
+      "tracks": "{count} tracks",
+      "noTrack": "---"
+    },
+    "search": {
+      "title": "Search: {query}",
+      "close": "Close",
+      "add": "Add to channel"
+    },
+    "soundboard": {
+      "title": "Sound Effects"
+    }
+  }
+}

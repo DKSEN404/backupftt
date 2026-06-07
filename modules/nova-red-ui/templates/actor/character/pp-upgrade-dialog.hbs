@@ -1,0 +1,277 @@
+<form class="pp-upgrade-dialog">
+  <nav class="pp-tabs">
+    <a class="pp-tab active" data-tab="stats"><i class="fa-solid fa-chart-simple"></i> Estadísticas</a>
+    <a class="pp-tab" data-tab="skills"><i class="fa-solid fa-hand-fist"></i> Habilidades</a>
+    <a class="pp-tab" data-tab="guide"><i class="fa-solid fa-book"></i> Guía</a>
+  </nav>
+
+  <div class="pp-tab-content">
+    {{! ============================================================
+        TAB 1: ESTADÍSTICAS
+        ============================================================ }}
+    <div class="pp-tab-pane active" data-tab="stats">
+      <div class="pp-stats-content">
+
+<h1>¿Se pueden mejorar las estadísticas?</h1>
+
+<p>Vale, empecemos con lo básico. Has creado a tu personaje, has repartido tus puntos, has mirado esos números en tu hoja y te has preguntado: <em>"¿Puedo hacer que esto suba?"</em></p>
+
+<p>Respuesta corta: <strong>casi nunca</strong>.</p>
+
+<p>Respuesta larga: en Cyberpunk Red, tus características base (INT, REF, DES, TCO, FRI, VOL, SUE, MOV, TEC, EMP) son <strong>mayoritariamente fijas</strong> después de la creación del personaje. No las subes con puntos de experiencia como en otros juegos. Los Puntos de Perfeccionamiento (PP) del capítulo 17 solo sirven para mejorar <strong>habilidades</strong> (Conducir, Pistola, Percepción...) y <strong>aptitudes de rol</strong> (Inspiración, Medicina, Cibertecnología...). Las estadísticas base se quedan como están.</p>
+
+<p>Pero ojo, <em>fijo no significa inmutable</em>. Hay formas de retocar esos números. Drogas, ciberware, terapia... Cada una con su precio, su riesgo y su lado oscuro. Esto es Night City, chico. Nada es gratis.</p>
+
+<h2>Lo que NO puedes cambiar (nunca)</h2>
+
+<table>
+<tr><th>Estadística</th><th>¿Mejorable?</th><th>¿Cómo?</th></tr>
+<tr><td><strong>INT</strong> (Inteligencia)</td><td class="pp-no"><strong>NO</strong> permanente</td><td>Solo temporal (drogas)</td></tr>
+<tr><td><strong>REF</strong> (Reflejos)</td><td class="pp-no"><strong>NO</strong> permanente</td><td>Solo temporal (drogas)</td></tr>
+<tr><td><strong>DES</strong> (Destreza)</td><td class="pp-no"><strong>NO</strong></td><td>Sin mecanismo alguno</td></tr>
+<tr><td><strong>FRI</strong> (Frialdad)</td><td class="pp-no"><strong>NO</strong></td><td>Sin mecanismo alguno</td></tr>
+<tr><td><strong>VOL</strong> (Voluntad)</td><td class="pp-no"><strong>NO</strong></td><td>Sin mecanismo alguno</td></tr>
+<tr><td><strong>SUE</strong> (Suerte)</td><td class="pp-no"><strong>NO</strong></td><td>Se recarga cada sesión, punto. No se aumenta.</td></tr>
+<tr><td><strong>MOV</strong> (Movimiento)</td><td class="pp-no"><strong>NO</strong></td><td>Sin mecanismo alguno</td></tr>
+<tr><td><strong>TEC</strong> (Técnica)</td><td class="pp-no"><strong>NO</strong></td><td>Sin mecanismo alguno</td></tr>
+</table>
+
+<p>Así es. La mayoría de tus características son <strong>tu esqueleto</strong>. No puedes entrenar para tener más Reflejos ni estudiar para tener más Inteligencia. En esta ciudad, <em>naciste con lo que tienes</em>. Pero hay excepciones, y duelen.</p>
+
+<h2>TCO (Cuerpo): la única mejora permanente</h2>
+
+<p>El <strong>Tipo Corporal</strong> es la única estadística que puedes aumentar de forma permanente, y solo hay una manera: <strong>arrancarte la carne y reemplazarla con metal</strong>.</p>
+
+<h3>Implante de hueso y músculo</h3>
+<p><strong>Coste:</strong> 1.000ed (muy caro) &nbsp;|&nbsp; <strong>Instalación:</strong> Hospital &nbsp;|&nbsp; <strong>PH:</strong> 14 (4d6)</p>
+<p>Te implantan una estructura ósea y muscular artificial que recubre tu esqueleto natural. El resultado: tu TCO aumenta en <strong>2 puntos</strong>. Esto cambia tus Puntos de Daño, tu umbral de Gravemente Herido y tu Salvación contra Muerte. Puedes instalarte varios, pero <strong>nunca podrás superar TCO 10</strong> por este método.</p>
+<p>Duele. Te vacía la cartera. Te come la Humanidad. Pero serás más duro.</p>
+
+<h3>Armazón lineal implantado Σ (Sigma)</h3>
+<p><strong>Coste:</strong> 1.000ed (muy caro) &nbsp;|&nbsp; <strong>PH:</strong> 14 (4d6)</p>
+<p>Exoesqueleto implantado que <strong>aumenta tu TCO a 12</strong> mientras estás conectado. No aumenta tus PD ni tu Salvación contra muerte, pero te da fuerza bruta. Requiere TCO 6 y un implante de hueso y músculo ya instalado. Necesitas 1 conector interface para usarlo.</p>
+
+<h3>Armazón lineal implantado β (Beta)</h3>
+<p><strong>Coste:</strong> 5.000ed (lujoso) &nbsp;|&nbsp; <strong>PH:</strong> 14 (4d6)</p>
+<p>La bestia. Aumenta tu TCO a <strong>14</strong>. No, no puedes llegar a 15. Tampoco aumenta PD ni Salvación, pero con TCO 14 eres una máquina de matar con patas. Requiere TCO 8, un implante de hueso y músculo, y <strong>2 conectores interface</strong>.</p>
+
+<table>
+<tr><th>Método</th><th>Incremento</th><th>TCO máximo</th><th>¿Aumenta PD?</th><th>Coste</th><th>PH</th></tr>
+<tr><td>Implante de hueso y músculo</td><td>+2</td><td>10</td><td>Sí</td><td>1.000ed</td><td>14</td></tr>
+<tr><td>Armazón Sigma (Σ)</td><td>Fija a 12</td><td>12</td><td>No</td><td>1.000ed</td><td>14</td></tr>
+<tr><td>Armazón Beta (β)</td><td>Fija a 14</td><td>14</td><td>No</td><td>5.000ed</td><td>14</td></tr>
+</table>
+
+<h2>Drogas: el subidón rápido (y su precio)</h2>
+
+<p>¿Necesitas más INT para esa incursión? ¿Más REF para ese duelo? Las drogas te dan lo que necesitas. Pero alquilar no es comprar, y cuando el efecto se acaba, <strong>la ciudad cobra su deuda</strong>.</p>
+
+<table>
+<tr><th>Droga</th><th>Estadística</th><th>Bonificador</th><th>Duración</th><th>Coste/dosis</th><th>VD secundario</th><th>Penalización por adicción</th></tr>
+<tr>
+<td><strong>Boost</strong></td><td>INT</td><td>+2 (puede superar 8)</td><td>24 horas</td><td>50ed (costoso)</td><td>VD17</td><td>INT -2 cuando no estés bajo efectos</td>
+</tr>
+<tr>
+<td><strong>Sintecoca</strong></td><td>REF</td><td>+1 (puede superar 8)</td><td>4 horas</td><td>20ed (asequible)</td><td>VD15</td><td>REF -2 cuando no estés bajo efectos</td>
+</tr>
+</table>
+
+<p><strong>Boost:</strong> Te vuelves más listo durante 24 horas. +2 a INT, incluso por encima de 8. Perfecto para cuando necesitas piratear ese terminal o averiguar qué está pasando realmente. Pero si te enganchas —y la tirada de VOL + Resistir torturas/drogas VD17 es jodida—, tu INT se reduce en 2 siempre que no estés colocado.</p>
+
+<p><strong>Sintecoca:</strong> +1 a REF durante 4 horas. Puede pasar de 8. También te pone paranoico, porque claro, todo esto tiene que salir de algún lado. Si fallas la VD15, te vuelves adicto y tus REF caen en 2 cuando no estés volando.</p>
+
+<p>Y ojo: hay más porquerías en la calle. <strong>Smash</strong> te da +2 a habilidades sociales durante 4h (10ed la dosis). <strong>Encaje negro</strong> te permite ignorar las heridas graves durante 24h (50ed, pero pierdes 2d6 de Humanidad cada dosis). Todo tiene un precio.</p>
+
+<h2>EMP y Humanidad: la terapia no te hace mejor, te mantiene cuerdo</h2>
+
+<p>La <strong>Empatía</strong> no se puede mejorar. Al contrario: cada pieza de ciberequipo que te instalas reduce permanentemente tu Humanidad máxima. Cada ciberware estándar te resta <strong>2 de Humanidad máxima</strong>. Cada borgware te resta <strong>4</strong>. Esa deuda no se paga nunca.</p>
+
+<p>Pero la terapia existe, y puede recuperar Humanidad perdida:</p>
+
+<table>
+<tr><th>Tipo de terapia</th><th>Coste</th><th>Recuperación</th><th>VD</th></tr>
+<tr><td>Pérdida estándar</td><td>500ed (caro)</td><td>2d6 de Humanidad</td><td>VD15</td></tr>
+<tr><td>Pérdida extrema</td><td>1.000ed (muy caro)</td><td>4d6 de Humanidad</td><td>VD17</td></tr>
+</table>
+
+<p>Cada terapia dura <strong>una semana entera</strong> en la que no puedes hacer nada más. El tecnomédico tira contra el VD. Si falla, el dinero y la semana se han ido a la mierda. La Humanidad nunca puede recuperarse del todo mientras lleves ciberware —el máximo se queda reducido para siempre.</p>
+
+<p>Cuando tu Humanidad pierde una decena (ej: de 40 pasa a 39), tu EMP también baja (de 4 a 3). Y si el EMP llega a 0 con Humanidad negativa... enhorabuena. Tu personaje pasa a ser propiedad del DJ. Bienvenido a la ciberpsicosis.</p>
+
+<h2>Tabla resumen</h2>
+
+<table>
+<tr><th>Estadística</th><th>¿Se puede mejorar?</th><th>Método</th><th>Coste</th><th>Riesgo</th></tr>
+<tr><td><strong>TCO</strong></td><td class="pp-yes"><strong>SÍ</strong> (+2 permanente)</td><td>Implante de hueso y músculo</td><td>1.000ed + 14 PH</td><td>Humanidad perdida, dinero, cirugía mayor</td></tr>
+<tr><td><strong>TCO</strong></td><td class="pp-maybe"><strong>SÍ</strong> (fija a 12)</td><td>Armazón Sigma implantado</td><td>1.000ed + 14 PH</td><td>Requiere TCO 6, implante de hueso, 1 conector interface</td></tr>
+<tr><td><strong>TCO</strong></td><td class="pp-maybe"><strong>SÍ</strong> (fija a 14)</td><td>Armazón Beta implantado</td><td>5.000ed + 14 PH</td><td>Requiere TCO 8, implante de hueso, 2 conectores interface</td></tr>
+<tr><td><strong>INT</strong></td><td class="pp-maybe">Temporal (+2, 24h)</td><td>Droga Boost</td><td>50ed/dosis</td><td>Adicción VD17: INT -2</td></tr>
+<tr><td><strong>REF</strong></td><td class="pp-maybe">Temporal (+1, 4h)</td><td>Droga Sintecoca</td><td>20ed/dosis</td><td>Adicción VD15: REF -2, paranoia</td></tr>
+<tr><td><strong>EMP</strong></td><td class="pp-maybe">Recuperación parcial</td><td>Terapia (estándar/extrema)</td><td>500ed-1.000ed / semana</td><td>Máximo reducido permanentemente por ciberware</td></tr>
+<tr><td><strong>DES</strong></td><td class="pp-no"><strong>NO</strong></td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>FRI</strong></td><td class="pp-no"><strong>NO</strong></td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>VOL</strong></td><td class="pp-no"><strong>NO</strong></td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>SUE</strong></td><td class="pp-no"><strong>NO</strong></td><td>—</td><td>—</td><td>Se recarga cada sesión</td></tr>
+<tr><td><strong>MOV</strong></td><td class="pp-no"><strong>NO</strong></td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>TEC</strong></td><td class="pp-no"><strong>NO</strong></td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+
+<h2>Y entonces, ¿qué se puede mejorar?</h2>
+
+<p>Todo lo que realmente importa: <strong>tus habilidades</strong>. Con Puntos de Perfeccionamiento (PP) puedes subir desde Conducir moto hasta hacer un bypass de seguridad. Las habilidades normales cuestan de 20 a 200 PP por nivel. Las habilidades difíciles (×2) cuestan el doble. Las aptitudes de rol cuestan de 60 a 600 PP por nivel. Y no puedes saltarte niveles: hay que sudar cada escalón.</p>
+
+<table>
+<tr><th>Nivel</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+<tr><td>Habilidad normal (PP)</td><td>20</td><td>40</td><td>60</td><td>80</td><td>100</td><td>120</td><td>140</td><td>160</td><td>180</td><td>200</td></tr>
+<tr><td>Habilidad difícil (PP)</td><td>40</td><td>80</td><td>120</td><td>160</td><td>200</td><td>240</td><td>280</td><td>320</td><td>360</td><td>400</td></tr>
+<tr><td>Aptitud de rol (PP)</td><td>60</td><td>120</td><td>180</td><td>240</td><td>300</td><td>360</td><td>420</td><td>480</td><td>540</td><td>600</td></tr>
+</table>
+
+<p>Ganas PP después de cada sesión según tu estilo de juego (Guerrero, Sociable, Explorador, Actor) y el éxito del grupo. Normalmente entre 10 y 80 PP por sesión. Así que sí, puedes mejorar. Pero no tu esqueleto. Mejoras lo que <em>haces</em> con él.</p>
+
+<hr>
+<p><em>Fuente: Cyberpunk Red Core Rulebook (R. Talsorian Games, 2020) — Capítulos 05, 06, 11, 16 y 17.</em></p>
+
+      </div>
+    </div>
+
+    {{! ============================================================
+        TAB 2: HABILIDADES
+        ============================================================ }}
+    <div class="pp-tab-pane" data-tab="skills">
+      <div class="pp-skills-header">
+        <span class="pp-remaining-label">PP disponibles:</span>
+        <span class="pp-remaining-value">{{remainingPP}}</span>
+      </div>
+
+      <div class="pp-skills-list">
+      {{#each (cprFindConfigObj "skillCategories") as |categoryVal categoryKey|}}
+        {{#each (cprSortCoreSkills (cprFilter ../actor.itemTypes.skill "system.category" categoryKey))}}
+          {{#if @first}}
+          <div class="pp-category-header" data-category="{{../categoryKey}}">
+            <span>{{localize (cprFindConfigValue "skillCategories" ../categoryKey)}}</span>
+          </div>
+          {{/if}}
+          <div class="pp-skill-row" data-skill-id="{{this._id}}"
+               data-difficulty="{{this.system.difficulty}}"
+               data-current-level="{{this.system.level}}"
+               data-skill-category="{{../categoryKey}}">
+            <span class="pp-skill-name">{{localize (cprGetLocalizedlNameKey this)}}</span>
+            {{#if (cprCompare this.system.difficulty "===" "difficult")}}
+              <span class="pp-skill-diff">(x2)</span>
+            {{/if}}
+            <button class="pp-skill-btn pp-skill-dec" data-action="dec" {{#if (cprCompare this.system.level "<=" 0)}}disabled{{/if}}>−</button>
+            <span class="pp-skill-level">{{this.system.level}}</span>
+            <button class="pp-skill-btn pp-skill-inc" data-action="inc" {{#if (cprCompare this.system.level ">=" 10)}}disabled{{/if}}>+</button>
+            <span class="pp-skill-cost">0 PP</span>
+          </div>
+        {{/each}}
+      {{/each}}
+      </div>
+
+      {{#if (cprCompare actor.itemTypes.role.length ">" 0)}}
+      <div class="pp-role-divider">
+        <span>Aptitud de rol</span>
+      </div>
+      <div class="pp-role-list">
+      {{#each actor.itemTypes.role}}
+        <div class="pp-role-row" data-role-id="{{this._id}}"
+             data-current-rank="{{this.system.rank}}">
+          <span class="pp-role-name">{{localize (cprGetLocalizedlNameKey this.system.mainRoleAbility "roleAbility")}} <span class="pp-role-source">({{localize (cprGetLocalizedlNameKey this)}})</span></span>
+          <button class="pp-skill-btn pp-role-dec" data-action="dec" {{#if (cprCompare this.system.rank "<=" 0)}}disabled{{/if}}>−</button>
+          <span class="pp-role-rank">{{this.system.rank}}</span>
+          <button class="pp-skill-btn pp-role-inc" data-action="inc" {{#if (cprCompare this.system.rank ">=" 10)}}disabled{{/if}}>+</button>
+          <span class="pp-role-cost">0 PP</span>
+        </div>
+      {{/each}}
+      </div>
+      {{/if}}
+
+      <div class="pp-pp-bar">
+        <div class="pp-pp-bar-track">
+          <div class="pp-pp-bar-fill" style="width: 0%"></div>
+        </div>
+        <span class="pp-pp-bar-label">PP</span>
+      </div>
+
+      <div class="pp-skills-footer">
+        <span class="pp-footer-cost">Coste total: <strong class="pp-total-cost">0 PP</strong></span>
+        <button class="pp-btn pp-btn-save" data-action="save" disabled>
+          <i class="fa-solid fa-floppy-disk"></i> Guardar cambios
+        </button>
+        <button class="pp-btn pp-btn-cancel" data-action="cancel">
+          <i class="fa-solid fa-xmark"></i> Cancelar
+        </button>
+      </div>
+    </div>
+
+    {{! ============================================================
+        TAB 3: GUÍA
+        ============================================================ }}
+    <div class="pp-tab-pane" data-tab="guide">
+      <div class="pp-guide-content">
+
+<h1>Mejorar tu personaje: la guía</h1>
+
+<p>Tu personaje ha sobrevivido a otra noche en Night City. Ha visto cosas. Ha hecho cosas. Y sigue vivo. Eso significa una cosa: <strong>tiempo de mejorar</strong>.</p>
+
+<h2>Puntos de Perfeccionamiento (PP)</h2>
+
+<p>Los PP son la sangre de tu progreso. Los ganas después de cada sesión según tu estilo de juego (Guerrero, Sociable, Explorador, Actor) y el éxito del grupo. Entre 10 y 80 PP por sesión, dependiendo de lo que hayas hecho y cómo lo hayas hecho.</p>
+
+<p>El DJ reparte PP al final de cada sesión. Si la misión fue un éxito rotundo, todos ganan más. Si alguien hizo algo memorable dentro de su estilo de juego, puede llevarse un bonus. No hay tablas exactas: es criterio del DJ. Pero la media son unos <strong>30-50 PP por sesión</strong> para un personaje activo.</p>
+
+<h2>Cómo gastar los PP</h2>
+
+<p>Cada habilidad tiene un coste basado en su nivel <em>actual</em>. Para subir una habilidad de nivel 3 a nivel 4, pagas el coste del nivel 4. No puedes saltarte niveles: para llegar a 5, primero pagas 2, luego 3, luego 4, luego 5. Bueno, en esta interfaz puedes planificar la subida de una sola vez —el sistema calcula el coste acumulado de todos los niveles intermedios—, pero el principio es el mismo: <strong>no hay atajos</strong>.</p>
+
+<h3>Costes de habilidad normal</h3>
+<table>
+<tr><th>Nuevo nivel</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+<tr><td>Coste (PP)</td><td>20</td><td>40</td><td>60</td><td>80</td><td>100</td><td>120</td><td>140</td><td>160</td><td>180</td><td>200</td></tr>
+</table>
+
+<h3>Costes de habilidad difícil (×2)</h3>
+<p>Las habilidades marcadas con <strong>(x2)</strong> cuestan el doble. Esto incluye cosas como Pilotear, Armas pesadas, o cualquier habilidad que el DJ considere especialmente compleja. Si ves una (x2) al lado del nombre, prepárate a pagar el doble por cada nivel.</p>
+<table>
+<tr><th>Nuevo nivel</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+<tr><td>Coste (PP)</td><td>40</td><td>80</td><td>120</td><td>160</td><td>200</td><td>240</td><td>280</td><td>320</td><td>360</td><td>400</td></tr>
+</table>
+
+<h3>Costes de aptitud de rol</h3>
+<p>Tu aptitud de rol (Inspiración para Rockerboys, Medicina para Médicos, etc.) es lo que te define. Subirla cuesta <strong>tres veces</strong> lo que una habilidad normal. Pero también es lo que te da acceso a tus mejores habilidades especiales.</p>
+<table>
+<tr><th>Nuevo nivel</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+<tr><td>Coste (PP)</td><td>60</td><td>120</td><td>180</td><td>240</td><td>300</td><td>360</td><td>420</td><td>480</td><td>540</td><td>600</td></tr>
+</table>
+
+<h2>Reglas importantes</h2>
+
+<ul>
+<li><strong>No puedes saltarte niveles.</strong> Para llegar a nivel 5, debes pagar los niveles 2, 3, 4 y 5. No hay atajos en la Calle.</li>
+<li><strong>Nivel máximo: 10.</strong> Nadie es perfecto. El nivel 10 es el techo para cualquier habilidad o aptitud.</li>
+<li><strong>Las estadísticas base no se mejoran con PP.</strong> INT, REF, DES, TCO, FRI, VOL, SUE, MOV, TEC, EMP son fijas (salvo excepciones como ciberware o drogas). Mira la pestaña <em>Estadísticas</em> para más detalles.</li>
+<li><strong>El cambio no es efectivo hasta que guardas.</strong> Puedes planificar todo lo que quieras con los botones + y −, pero nada cambia en tu ficha hasta que pulsas <em>Guardar cambios</em>.</li>
+<li><strong>El registro queda en el Ledger.</strong> Cada gasto de PP se registra automáticamente en el sistema de cuentas (ledger) de tu personaje, igual que cuando ganas PP por sesión.</li>
+</ul>
+
+<h2>Notificación de mejora</h2>
+
+<p>¿Ves esa cruz ámbar sobre tu retrato? Te avisa cuando tienes suficientes PP para mejorar. Puedes ajustar el umbral aquí:</p>
+
+<div class="pp-threshold-setting">
+  <label for="pp-threshold-input">Notificarme cuando tenga al menos</label>
+  <input type="number" class="pp-threshold-input" id="pp-threshold-input"
+         value="{{threshold}}" min="1" max="999" />
+  <label for="pp-threshold-input">PP</label>
+</div>
+
+<p>El valor por defecto es 20 PP (el coste del primer nivel de cualquier habilidad normal). Si quieres que te avise antes o después, ajusta el número. El cambio se guarda automáticamente al salir del campo.</p>
+
+<hr>
+<p><em>"Mejora o muere. En Night City no hay término medio."</em></p>
+
+      </div>
+    </div>
+  </div>
+</form>

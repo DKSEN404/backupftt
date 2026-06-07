@@ -1,0 +1,22 @@
+{
+   "label": "Pericias (Artes Marciales)",
+  "mapping": {},
+  "entries": {
+    "Martial Arts (Aikido)": {
+      "name": "Artes Marciales (Aikido)",
+      "description": ""
+    },
+    "Martial Arts (Judo)": {
+      "name": "Artes Marciales (Judo)",
+      "description": ""
+    },
+    "Martial Arts (Karate)": {
+      "name": "Artes Marciales (Kárate)",
+      "description": ""
+    },
+    "Martial Arts (Taekwondo)": {
+      "name": "Artes Marciales (Taekwondo)",
+      "description": ""
+    }
+  }
+}

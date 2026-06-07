@@ -1,0 +1,5 @@
+1.1.1   Minor release for switching to Foundry v13 by default iv if still compatible with Foundry v12
+1.1.0   Final release compatible with Foundry VTT v12 and v13
+1.0.0   Final release for Foundry VTT V12
+0.2.0   Add a way to open the scene configuration window
+0.1.0   Initial release

@@ -1,0 +1,62 @@
+{
+   "label": "Pericias (Experto Local)",
+  "mapping": {},
+  "entries": {
+    "Local Expert (Badlands)": {
+      "name": "Experto Local (Yermo)",
+      "description": ""
+    },
+    "Local Expert (Little China)": {
+      "name": "Experto Local (Pequeña China)",
+      "description": ""
+    },
+    "Local Expert (Little Europe)": {
+      "name": "Experto Local (Pequeña Europa)",
+      "description": ""
+    },
+    "Local Expert (Morro Rock)": {
+      "name": "Experto Local (Morro Rock)",
+      "description": ""
+    },
+    "Local Expert (New Westbrook)": {
+      "name": "Experto Local (Nueva Westbrook)",
+      "description": ""
+    },
+    "Local Expert (Norcal Military Base)": {
+      "name": "Experto Local (Base Militar de Norcal)",
+      "description": ""
+    },
+    "Local Expert (Old Combat Zone)": {
+      "name": "Experto Local (Antigua Zona de Combate)",
+      "description": ""
+    },
+    "Local Expert (Old Corp Center)": {
+      "name": "Experto Local (Antiguo Centro Corporativo)",
+      "description": ""
+    },
+    "Local Expert (Old Japan Town)": {
+      "name": "Experto Local (Antiguo Barrio Japonés)",
+      "description": ""
+    },
+    "Local Expert (South Night City)": {
+      "name": "Experto Local (Ciudad Sur de Noche)",
+      "description": ""
+    },
+    "Local Expert (The Glen)": {
+      "name": "Experto Local (The Glen)",
+      "description": ""
+    },
+    "Local Expert (University District)": {
+      "name": "Experto Local (Distrito Universitario)",
+      "description": ""
+    },
+    "Local Expert (Upper Marina)": {
+      "name": "Experto Local (Marina Alta)",
+      "description": ""
+    },
+    "Local Expert (Watson)": {
+      "name": "Experto Local (Watson)",
+      "description": ""
+    }
+  }
+}

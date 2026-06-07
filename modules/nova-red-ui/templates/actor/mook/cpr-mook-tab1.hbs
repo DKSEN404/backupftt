@@ -1,0 +1,50 @@
+<div class="mook-tab1-content">
+  <div class="mook-header">
+    <div class="mook-image">
+      {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-image.hbs"}}
+    </div>
+    <div class="mook-title-area">
+      <div class="mook-name text-hero">
+        <a class="change-mook-name text-largest">{{actor.name}}</a>
+      </div>
+      <div class="mook-quick-stats">
+        <div class="mook-hp">
+          <span class="text-semi">{{localize "CPR.global.generic.hitpoints"}}:</span>
+          <input class="text-center" name="system.derivedStats.hp.value" type="number" value="{{actor.system.derivedStats.hp.value}}" data-dtype="Number"/>
+          <span class="text-semi">/</span>
+          <input class="text-center" name="system.derivedStats.hp.max" type="number" value="{{actor.system.derivedStats.hp.max}}" data-dtype="Number"/>
+        </div>
+        <div class="mook-wounded">
+          <span class="text-semi">{{localize "CPR.mookSheet.woundState"}}:</span>
+          <span>{{localize (cprFindConfigValue "woundState" actor.system.derivedStats.currentWoundState)}}</span>
+        </div>
+        <div class="mook-deathsave">
+          <a class="rollable text-semi" data-roll-title="{{localize "CPR.mookSheet.deathSave.title"}}" data-roll-type="deathsave">{{localize "CPR.mookSheet.deathSave.title"}}</a>
+          <span data-tooltip="{{localize "CPR.global.generic.deathPenalty"}}: {{actor.system.derivedStats.deathSave.penalty}}<br/>{{localize "CPR.mookSheet.deathSave.hoverCriticalInjuryPenalty"}}: {{actor.system.derivedStats.deathSave.basePenalty}}">
+            <a class="reset-deathsave-value">{{actor.system.derivedStats.deathSave.value}}</a>
+          </span>
+          <a class="increase-deathsave-value"><i class="far fa-circle-up text-smaller" data-tooltip="{{localize "CPR.mookSheet.deathSave.increase"}}"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mook-stats-area">
+    {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-stats.hbs"}}
+  </div>
+  <div class="mook-skills-area">
+    {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-skills.hbs"}}
+  </div>
+  <div class="mook-combat-area">
+    <div class="mook-weapon-list">
+      <span class="mook-weapon-header text-semi">{{localize "CPR.characterSheet.bottomPane.fight.weapons"}}</span>
+      {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/cpr-weapons-list.hbs" this}}
+    </div>
+    <div class="mook-armor">
+      <span class="mook-armor-header text-semi">{{localize "CPR.global.itemTypes.armor"}}</span>
+      {{> "systems/cyberpunk-red-core/templates/actor/mixin/fight/cpr-armor-list.hbs"}}
+    </div>
+  </div>
+  <div class="mook-crit-area">
+    {{> "systems/cyberpunk-red-core/templates/actor/mook/cpr-mook-criticalInjury.hbs"}}
+  </div>
+</div>

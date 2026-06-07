@@ -1,0 +1,37 @@
+{
+  "title": "Translation: Spanish [Core]",
+  "description": "Traducción al Español (Spanish) de FoundryVTT",
+  "version": "14.360.1",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14.360",
+    "maximum": "14"
+  },
+  "languages": [
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json",
+      "flags": {}
+    }
+  ],
+  "url": "https://github.com/lozanoje/foundryvtt-es",
+  "manifest": "https://raw.githubusercontent.com/lozanoje/foundryvtt-es/master/module.json",
+  "download": "https://github.com/lozanoje/foundryvtt-es/archive/master.zip",
+  "id": "foundryvtt-es",
+  "authors": [
+    {
+      "name": "Viriato139ac",
+      "flags": {}
+    },
+    {
+      "name": "Cosmo Corban",
+      "flags": {}
+    },
+    {
+      "name": "Zeedif",
+      "flags": {}
+    }
+  ],
+  "coreTranslation": true
+}

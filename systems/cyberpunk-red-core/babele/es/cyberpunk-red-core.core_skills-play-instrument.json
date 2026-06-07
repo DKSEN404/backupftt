@@ -1,0 +1,26 @@
+{
+   "label": "Pericias (Tocar Instrumento)",
+  "mapping": {},
+  "entries": {
+    "Play Instrument (Drums)": {
+      "name": "Tocar Instrumento (Batería)",
+      "description": ""
+    },
+    "Play Instrument (Guitar)": {
+      "name": "Tocar Instrumento (Guitarra)",
+      "description": ""
+    },
+    "Play Instrument (Piano)": {
+      "name": "Tocar Instrumento (Piano)",
+      "description": ""
+    },
+    "Play Instrument (Singing)": {
+      "name": "Tocar Instrumento (Canto)",
+      "description": ""
+    },
+    "Play Instrument (Violin)": {
+      "name": "Tocar Instrumento (Violín)",
+      "description": ""
+    }
+  }
+}

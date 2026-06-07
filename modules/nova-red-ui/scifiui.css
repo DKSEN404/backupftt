@@ -1,0 +1,4203 @@
+/* ============================================================
+   Nova Red UI — Cyberpunk RED Core Theme Overlay
+   Ámbar sobre negro + Glass Interface. Sin imágenes. Puro CSS.
+   ============================================================ */
+
+:root {
+  --nv-glass-deep:   rgba(0, 0, 0, 0.35);
+  --nv-glass-dark:   rgba(5, 5, 5, 0.40);
+  --nv-glass-mid:    rgba(10, 10, 10, 0.45);
+  --nv-glass-light:  rgba(13, 13, 13, 0.40);
+  --nv-glass-blur:   blur(4px);
+
+  --cpr-font-primary: "Tektur", monospace;
+
+  --nv-accent:        var(--cpr-color-white, #ffb000);
+  --nv-accent-dim:    var(--cpr-color-pink, #ff8c00);
+  --nv-accent-bright: var(--cpr-text-foundry-hover, #ffcc00);
+  --nv-border:        var(--cpr-color-dark-grey, #332200);
+  --nv-bg-input:      var(--cpr-background-foundry-input, #0d0d0d);
+  --nv-bg-dark:       var(--cpr-background-pill, #1a1a00);
+  --nv-bg-nearblack:  var(--cpr-color-near-black, #0a0a0a);
+  --nv-bg-offblack:   var(--cpr-color-off-black, #050505);
+  --nv-text-dimmed:   var(--cpr-color-medium-grey, #554400);
+  --nv-text-hint:     var(--cpr-text-foundry-hint, #aa7700);
+  --nv-text-black:    var(--cpr-text-tab-highlight, #000000);
+
+  --nv-color-success: var(--cpr-text-chat-success, #00ffaa);
+  --nv-color-danger:  var(--cpr-text-chat-failure, #ff2a2a);
+  --nv-glow-success:  color-mix(in srgb, var(--nv-color-success) 30%, transparent);
+  --nv-glow-danger:   color-mix(in srgb, var(--nv-color-danger) 30%, transparent);
+  --nv-glow-success-010: color-mix(in srgb, var(--nv-color-success) 10%, transparent);
+  --nv-glow-success-020: color-mix(in srgb, var(--nv-color-success) 20%, transparent);
+  --nv-glow-success-030: color-mix(in srgb, var(--nv-color-success) 30%, transparent);
+  --nv-glow-success-040: color-mix(in srgb, var(--nv-color-success) 40%, transparent);
+  --nv-glow-success-050: color-mix(in srgb, var(--nv-color-success) 50%, transparent);
+  --nv-glow-success-070: color-mix(in srgb, var(--nv-color-success) 70%, transparent);
+
+  --nv-glow-003: color-mix(in srgb, var(--nv-accent) 3%, transparent);
+  --nv-glow-005: color-mix(in srgb, var(--nv-accent) 5%, transparent);
+  --nv-glow-008: color-mix(in srgb, var(--nv-accent) 8%, transparent);
+  --nv-glow-010: color-mix(in srgb, var(--nv-accent) 10%, transparent);
+  --nv-glow-015: color-mix(in srgb, var(--nv-accent) 15%, transparent);
+  --nv-glow-020: color-mix(in srgb, var(--nv-accent) 20%, transparent);
+  --nv-glow-030: color-mix(in srgb, var(--nv-accent) 30%, transparent);
+  --nv-glow-035: color-mix(in srgb, var(--nv-accent) 35%, transparent);
+  --nv-glow-040: color-mix(in srgb, var(--nv-accent) 40%, transparent);
+  --nv-glow-050: color-mix(in srgb, var(--nv-accent) 50%, transparent);
+  --nv-glow-070: color-mix(in srgb, var(--nv-accent) 70%, transparent);
+}
+
+html[data-cpr-theme="default"] {
+  background-image:
+    linear-gradient(var(--nv-glow-003, rgba(255, 176, 0, 0.03)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--nv-glow-003, rgba(255, 176, 0, 0.03)) 1px, transparent 1px);
+  background-image:
+    linear-gradient(var(--nv-glow-003) 1px, transparent 1px),
+    linear-gradient(90deg, var(--nv-glow-003) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* ==========================================================
+   1. BASE GLOBAL
+   ========================================================== */
+body, html {
+  font-family: "Tektur", monospace;
+}
+
+.window-app {
+  font-family: "Tektur", monospace;
+}
+
+input, select, button, textarea {
+  font-family: "Tektur", monospace !important;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="search"],
+input,
+select,
+button {
+  color: var(--nv-accent) !important;
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+input:hover, select:hover, button:hover {
+  border-color: var(--nv-accent) !important;
+}
+
+input:focus, select:focus {
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  outline: none !important;
+}
+
+input::placeholder {
+  color: var(--nv-text-dimmed) !important;
+  opacity: 0.6;
+}
+
+button {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), transparent) !important;
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 10px var(--nv-glow-030) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
+button:active {
+  background: var(--nv-glow-015) !important;
+  box-shadow: inset 0 0 8px var(--nv-glow-020) !important;
+}
+
+option, optgroup {
+  background: var(--nv-bg-nearblack) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   2. SCROLLBAR
+   ========================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nv-bg-offblack) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nv-border) !important;
+  border: 1px solid var(--nv-text-dimmed) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nv-text-dimmed) !important;
+}
+
+/* ==========================================================
+   3. SIDEBAR
+   ========================================================== */
+#sidebar {
+  background: var(--nv-glass-dark) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  border: 1px solid var(--nv-accent) !important;
+  box-shadow: 0 0 12px var(--nv-glow-015, rgba(255, 176, 0, 0.15)), inset 0 0 12px var(--nv-glow-005, rgba(255, 176, 0, 0.05)) !important;
+}
+
+#sidebar-tabs {
+  border-bottom: 1px solid var(--nv-accent) !important;
+  background: var(--nv-glass-deep) !important;
+}
+
+#sidebar-tabs > .item {
+  color: var(--nv-text-dimmed) !important;
+  border: 1px solid transparent !important;
+}
+
+#sidebar-tabs > .item.active {
+  color: var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+#sidebar-tabs > .item:hover {
+  color: var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+.sidebar-tab .directory-header {
+  background: var(--nv-bg-nearblack) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.sidebar-tab .directory-header .header-search input {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.sidebar-tab .directory-header .header-search input:focus {
+  border-color: var(--nv-accent) !important;
+}
+
+.directory-list .directory-item {
+  border-bottom: 1px solid var(--nv-bg-input) !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.directory-list .directory-item:hover {
+  background: linear-gradient(90deg, var(--nv-glow-010), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+.directory-list .directory-item.active {
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  color: var(--nv-accent-bright) !important;
+  border-left: 3px solid var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020) !important;
+}
+
+/* ==========================================================
+   4. FOLDER HEADERS
+   ========================================================== */
+.folder > .folder-header {
+  background: var(--nv-glass-deep) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020, rgba(255, 176, 0, 0.2)) !important;
+}
+
+.folder > .folder-header:hover {
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  border-bottom-color: var(--nv-accent) !important;
+}
+
+.subdirectory .folder {
+  border-left: 2px solid var(--nv-border) !important;
+}
+
+/* ==========================================================
+   5. DIRECTORY FOOTER BUTTONS
+   ========================================================== */
+.sidebar-tab .directory-footer button,
+.directory .action-buttons button {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020, rgba(255, 176, 0, 0.2)) !important;
+}
+
+.sidebar-tab .directory-footer button:hover,
+.directory .action-buttons button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+/* ==========================================================
+   6. SCENE NAVIGATION — THUMBNAIL GALLERY
+   ========================================================== */
+#navigation {
+  background: transparent !important;
+  bottom: 6px !important;
+  left: 48px !important;
+  gap: 4px !important;
+  display: flex !important;
+  align-items: end !important;
+}
+
+#navigation #nav-toggle {
+  flex: 0 0 36px !important;
+  height: 36px !important;
+  background: var(--nv-bg-nearblack) !important;
+  border: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-015, rgba(255, 176, 0, 0.15)) !important;
+  border-radius: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  line-height: 36px !important;
+  margin-bottom: 2px !important;
+}
+
+#navigation #nav-toggle:hover {
+  background: var(--nv-bg-dark) !important;
+  box-shadow: 0 0 10px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+#navigation #scene-list {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 4px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: thin !important;
+  padding: 2px 0 !important;
+  max-height: 106px !important;
+  align-items: end !important;
+}
+
+#navigation #scene-list::-webkit-scrollbar {
+  height: 4px !important;
+}
+
+#navigation #scene-list::-webkit-scrollbar-thumb {
+  background: var(--nv-border) !important;
+  border-radius: 2px !important;
+}
+
+#navigation #scene-list .scene {
+  flex: 0 0 120px !important;
+  height: 90px !important;
+  position: relative !important;
+  background: var(--nv-bg-nearblack) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s !important;
+  display: flex !important;
+  align-items: end !important;
+}
+
+#navigation #scene-list .scene .thumbnail {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+#navigation #scene-list .scene .scene-name {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  padding: 3px 6px !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: var(--nv-accent) !important;
+  font-size: 10px !important;
+  font-family: "Tektur", monospace !important;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.4 !important;
+  border-top: 1px solid var(--nv-glow-015, rgba(255, 176, 0, 0.15)) !important;
+}
+
+#navigation #scene-list .scene .scene-controls {
+  position: absolute !important;
+  top: 2px !important;
+  right: 2px !important;
+  z-index: 3 !important;
+  display: none !important;
+  gap: 2px !important;
+}
+
+#navigation #scene-list .scene:hover .scene-controls {
+  display: flex !important;
+}
+
+#navigation #scene-list .scene .scene-controls .scene-control {
+  flex: 0 0 22px !important;
+  height: 22px !important;
+  background: rgba(0, 0, 0, 0.85) !important;
+  border: 1px solid var(--nv-text-dimmed) !important;
+  color: var(--nv-text-hint) !important;
+  border-radius: 3px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 11px !important;
+  line-height: 22px !important;
+}
+
+#navigation #scene-list .scene .scene-controls .scene-control:hover {
+  border-color: var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+#navigation #scene-list .scene:hover {
+  border-color: var(--nv-text-dimmed) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+#navigation #scene-list .scene.view,
+#navigation #scene-list .scene.context {
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 10px var(--nv-glow-035, rgba(255, 176, 0, 0.35)), inset 0 0 10px var(--nv-glow-005, rgba(255, 176, 0, 0.05)) !important;
+}
+
+#navigation #scene-list .scene.view .scene-name,
+#navigation #scene-list .scene.context .scene-name {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border-top-color: var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+#navigation #scene-list .scene.gm {
+  border-left: 3px solid var(--nv-accent-dim) !important;
+}
+
+#navigation #scene-list .scene.gm::after {
+  content: "GM" !important;
+  position: absolute !important;
+  top: 2px !important;
+  left: 2px !important;
+  z-index: 3 !important;
+  background: rgba(255, 140, 0, 0.85) !important;
+  color: var(--nv-text-black) !important;
+  font-size: 8px !important;
+  font-family: "Tektur", monospace !important;
+  font-weight: bold !important;
+  padding: 1px 4px !important;
+  border-radius: 2px !important;
+  line-height: 1.2 !important;
+}
+
+#navigation #scene-list .scene.gm .thumbnail {
+  filter: brightness(0.7) saturate(0.8) !important;
+}
+
+#navigation #scene-list .scene.gm:hover .thumbnail {
+  filter: brightness(0.85) saturate(0.9) !important;
+}
+
+.scene-control, .control-tool {
+  background: var(--nv-bg-nearblack) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.scene-control:hover, .control-tool:hover {
+  border-color: var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020, rgba(255, 176, 0, 0.2)) !important;
+}
+
+.scene-control.active, .control-tool.active {
+  border-color: var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)), inset 0 0 8px var(--nv-glow-010, rgba(255, 176, 0, 0.1)) !important;
+}
+
+/* ==========================================================
+   7. ACTOR SHEET — GENERAL
+   ========================================================== */
+.actor-sheet,
+.mook-sheet,
+.container-sheet,
+.blackice-sheet,
+.demon-sheet,
+.item-sheet,
+.dialog-sheet {
+  font-family: "Tektur", monospace !important;
+}
+
+.actor-sheet img,
+.mook-sheet img,
+.container-sheet img,
+.blackice-sheet img,
+.demon-sheet img,
+.item-sheet img,
+.dialog-sheet img {
+  border: 1px solid var(--nv-border) !important;
+}
+
+.actor-sheet a:hover,
+.mook-sheet a:hover,
+.container-sheet a:hover,
+.blackice-sheet a:hover,
+.demon-sheet a:hover,
+.item-sheet a:hover,
+.dialog-sheet a:hover {
+  text-shadow: 0 0 8px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+/* ==========================================================
+    8. ACTOR SHEET — LEFT PANE
+   ========================================================== */
+.actor-sheet .left-pane .actor-details {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.actor-sheet .left-pane .actor-details * {
+  background: transparent !important;
+}
+
+.actor-sheet .left-pane .actor-details-image {
+  background-color: var(--nv-glass-deep) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.actor-sheet .left-pane .actor-details-handle input,
+.actor-sheet .left-pane .actor-details-role input {
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.actor-sheet .left-pane .actor-details-handle input:focus,
+.actor-sheet .left-pane .actor-details-role input:focus {
+  border-bottom-color: var(--nv-accent) !important;
+}
+
+/* HP / Humanity / Death Save */
+.actor-details-hp,
+.actor-details-humanity,
+.actor-details-death-save,
+.actor-details-wound-state,
+.actor-details-improvement-points,
+.actor-details-reputation,
+.actor-details-eurobucks {
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.actor-details-hp-title,
+.actor-details-humanity-title,
+.actor-details-death-save-title,
+.actor-details-wound-state-title,
+.actor-details-improvement-points-title,
+.actor-details-reputation-title,
+.actor-details-eurobucks-title {
+  border-bottom: 1px solid var(--nv-border) !important;
+  color: var(--nv-text-hint) !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+/* ==========================================================
+   9. STATS
+   ========================================================== */
+.actor-sheet .left-pane .actor-stats {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.actor-sheet .left-pane .actor-stats * {
+  background: transparent !important;
+}
+
+.actor-stats-title {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.65rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+}
+
+.actor-stats-value input,
+.actor-stats-value {
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+}
+
+.actor-stats-of-min,
+.actor-stats-of-max {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.actor-stats-of-sep {
+  color: var(--nv-border) !important;
+}
+
+/* ==========================================================
+   10. MIN-OF-MAX CONTAINER
+   ========================================================== */
+.min-of-max-container input[type="number"] {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--nv-accent) !important;
+}
+
+.min-of-max-container .of {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.min-of-max-container .of-stat {
+  color: var(--nv-text-hint) !important;
+}
+
+/* ==========================================================
+   11. WOUND STATE
+   ========================================================== */
+.actor-details-wound-state-value {
+  color: var(--nv-accent) !important;
+}
+
+/* Death save */
+.death-save-value {
+  color: var(--nv-color-danger) !important;
+}
+
+.actor-details-death-save a {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   12. IMPROVEMENT POINTS / REPUTATION / EUROBUCKS
+   ========================================================== */
+.actor-details-improvement-points-value,
+.actor-details-reputation-value,
+.actor-details-eurobucks-value {
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+}
+
+.actor-details-improvement-points-actions a,
+.actor-details-reputation-actions a,
+.actor-details-eurobucks-ledger a {
+  color: var(--nv-accent-dim) !important;
+}
+
+.actor-details-reputation-facedown a {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   13. CONTENT FILTER
+   ========================================================== */
+.actor-details-filter-box .filter-contents {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.actor-details-filter-box .filter-contents::placeholder {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.actor-details-filter-actions {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   14. RIGHT / BOTTOM PANE — BORDERS
+   ========================================================== */
+.actor-sheet .right-pane .right-content-section {
+  border-color: var(--nv-border) !important;
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.actor-sheet .bottom-pane .bottom-content-section {
+  border-color: var(--nv-border) !important;
+  background-color: var(--nv-glass-mid) !important;
+}
+
+/* ==========================================================
+   15. TABS
+   ========================================================== */
+.tab-label {
+  background-color: var(--nv-bg-input) !important;
+  color: var(--nv-text-dimmed) !important;
+  border: 1px solid transparent !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.tab-label.active {
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  color: var(--nv-accent-bright) !important;
+  border: 1px solid var(--nv-accent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+.tab-label:hover {
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  color: var(--nv-accent-bright) !important;
+  border-color: var(--nv-accent) !important;
+}
+
+.tab-label .tab-highlight {
+  color: var(--nv-accent-dim) !important;
+}
+
+.tab-pink-underlay {
+  background-color: transparent !important;
+}
+
+.cpr-tabs .item.active {
+  text-shadow: 0 0 8px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+/* ==========================================================
+   16. SKILLS TAB
+   ========================================================== */
+.skills-tab {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.skills-tab .skills-container {
+  background-color: var(--nv-glass-dark) !important;
+}
+
+.skills-tab .skills-container .left-pane-skills,
+.skills-tab .skills-container .right-pane-skills {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.skills-tab li:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.skills-tab li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+.skills-tab .skills-container .text-pill {
+  background-color: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.skill-level input,
+.skill-base input,
+.skill-mod-value input {
+  background: transparent !important;
+  border: none !important;
+  color: var(--nv-accent) !important;
+}
+
+.skill-favorite {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   17. GEAR TAB
+   ========================================================== */
+.gear-tab li:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.gear-tab li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+.items-header {
+  background-color: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+}
+
+.items-header span {
+  color: var(--nv-accent) !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.gear-name {
+  color: var(--nv-accent) !important;
+}
+
+.gear-tab .gear-amount .gear-amount-value .gear-amount-input {
+  color: var(--nv-accent) !important;
+  background: transparent !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.gear-tab .gear-actions .fa-trash-can {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   18. CYBERWARE TAB
+   ========================================================== */
+.cyberware-tab .icon-button {
+  color: var(--nv-accent-dim) !important;
+}
+
+.cyberware-list .item {
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+}
+
+/* ==========================================================
+   19. EFFECTS TAB
+   ========================================================== */
+.effects-list .effects-category {
+  background-color: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+}
+
+.effects-list li:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.effects-list li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+.effects-list .item-header {
+  background-color: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+}
+
+.effect-source {
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* ==========================================================
+   20. ROLE TAB
+   ========================================================== */
+.role-tab {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.role-tab .role-tab-content .role-item .fa-trash-can {
+  color: var(--nv-accent-dim) !important;
+}
+
+.role-tab .role-tab-content .role-item .role-name,
+.role-tab .role-tab-content .role-item .ability-name {
+  color: var(--nv-accent) !important;
+}
+
+.role-tab .role-tab-content .role-item .role-rank,
+.role-tab .role-tab-content .role-item .ability-rank {
+  color: var(--nv-text-hint) !important;
+}
+
+/* ==========================================================
+   21. LIFEPATH TAB
+   ========================================================== */
+.lifepath-tab .section-name {
+  background-color: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+}
+
+.lifepath-list li:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.lifepath-list li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+/* ==========================================================
+    22. FIGHT TAB — MEATSPACE (sistema original + hoja vertical)
+   ========================================================== */
+.fight-tab {
+  display: grid !important;
+  grid-template-areas: "injuries armor weapon" !important;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr) !important;
+  height: 100% !important;
+  gap: 0.15rem !important;
+  background-color: var(--nv-glass-dark) !important;
+}
+
+.fight-tab .injuries-section {
+  grid-area: injuries !important;
+  min-height: 100% !important;
+}
+
+.fight-tab .armor-section {
+  grid-area: armor !important;
+  min-height: 100% !important;
+}
+
+.fight-tab .weapon-section {
+  grid-area: weapon !important;
+  min-height: 100% !important;
+}
+
+.fight-tab .section-name,
+.rolefight-tab-content .section-name {
+  background-color: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+}
+
+.fight-tab .fight-tab > div,
+.rolefight-tab-content > div {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.fight-tab .injuries-section .items-header,
+.fight-tab .armor-section .items-header,
+.fight-tab .weapon-section .items-header,
+.rolefight-tab-content .injuries-section .items-header,
+.rolefight-tab-content .armor-section .items-header,
+.rolefight-tab-content .weapon-section .items-header {
+  background-color: var(--nv-bg-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+    23. WEAPON GRID
+   ========================================================== */
+.weapon-grid {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr 4rem 1.1rem 1.8rem 1.8rem !important;
+  grid-template-rows: auto auto auto !important;
+  grid-template-areas:
+    "weapon-image weapon-name weapon-mode weapon-actions weapon-attack weapon-damage"
+    "weapon-image weapon-ammo weapon-mode weapon-actions weapon-attack weapon-damage"
+    "weapon-image weapon-info weapon-mode weapon-actions weapon-attack weapon-damage" !important;
+  height: auto !important;
+  min-height: 3.2rem !important;
+  padding: 0.15rem 0 !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+  margin: 0.15rem !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.weapon-image {
+  grid-area: weapon-image !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.weapon-image img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+
+.weapon-name {
+  grid-area: weapon-name !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  min-width: 0 !important;
+}
+
+.weapon-ammo {
+  grid-area: weapon-ammo !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.weapon-info {
+  grid-area: weapon-info !important;
+}
+
+.weapon-mode {
+  grid-area: weapon-mode !important;
+}
+
+.weapon-actions {
+  grid-area: weapon-actions !important;
+}
+
+.weapon-attack {
+  grid-area: weapon-attack !important;
+}
+
+.weapon-damage {
+  grid-area: weapon-damage !important;
+}
+
+.weapon-name a {
+  color: var(--nv-accent) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+.weapon-info .text-pill {
+  background-color: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+  font-size: 0.6rem !important;
+}
+
+.weapon-mode .fire-checkbox {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.weapon-mode .fire-checkbox.active {
+  color: var(--nv-accent) !important;
+}
+
+.weapon-attack a,
+.weapon-damage a {
+  color: var(--nv-accent-dim) !important;
+}
+
+.weapon-attack a:hover,
+.weapon-damage a:hover {
+  text-shadow: 0 0 8px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+.weapon-image i {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+    24. ARMOR GRID
+   ========================================================== */
+.armor-grid {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr auto 1.9rem 2.2rem !important;
+  grid-template-rows: auto auto auto !important;
+  grid-template-areas:
+    "armor-image armor-name armor-name armor-name armor-name"
+    "armor-image armor-1-location armor-1-stats armor-1-type armor-1-actions"
+    "armor-image armor-2-location armor-2-stats armor-2-type armor-2-actions" !important;
+  height: auto !important;
+  min-height: 3.2rem !important;
+  padding: 0.15rem 0 !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+  margin: 0.15rem !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.armor-image {
+  grid-area: armor-image !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.armor-image img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+
+.armor-name {
+  grid-area: armor-name !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  min-width: 0 !important;
+}
+
+.armor-1-location {
+  grid-area: armor-1-location !important;
+}
+
+.armor-2-location {
+  grid-area: armor-2-location !important;
+}
+
+.armor-1-stats {
+  grid-area: armor-1-stats !important;
+}
+
+.armor-2-stats {
+  grid-area: armor-2-stats !important;
+}
+
+.armor-1-type {
+  grid-area: armor-1-type !important;
+}
+
+.armor-2-type {
+  grid-area: armor-2-type !important;
+}
+
+.armor-1-actions {
+  grid-area: armor-1-actions !important;
+}
+
+.armor-2-actions {
+  grid-area: armor-2-actions !important;
+}
+
+.armor-name a {
+  color: var(--nv-accent) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+.armor-1-location,
+.armor-2-location {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.7rem !important;
+}
+
+.armor-1-type,
+.armor-2-type {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.armor-image i {
+  color: var(--nv-accent) !important;
+}
+
+.armor-1-stats,
+.armor-2-stats {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+    24.4. INJURIES GRID
+   ========================================================== */
+.injuries-grid {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr 1.2rem !important;
+  grid-template-rows: auto auto auto !important;
+  grid-template-areas:
+    "injuries-image injuries-name injuries-name"
+    "injuries-image injuries-desc injuries-actions"
+    "injuries-image injuries-effects injuries-effects" !important;
+  height: auto !important;
+  min-height: 3.2rem !important;
+  padding: 0.15rem 0 !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+  margin: 0.15rem !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.injuries-image {
+  grid-area: injuries-image !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.injuries-image img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+
+.injuries-effects {
+  grid-area: injuries-effects !important;
+}
+
+/* ==========================================================
+    24.5. FIGHT STATE NAV — MEATSPACE / NETSPACE TOGGLE
+   ========================================================== */
+.fight-state-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  padding: 0.25rem 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+
+.fight-state-nav .fight-state-active {
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+.fight-state-nav .fight-state-sep {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.fight-state-nav a.toggle-fight-state {
+  color: var(--nv-text-hint) !important;
+  cursor: pointer !important;
+}
+
+.fight-state-nav a.toggle-fight-state:hover {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+/* ==========================================================
+    25. NETSPACE — NETRUNNING SECTIONS (Fight Tab & Role+Fight Tab)
+   ========================================================== */
+.fight-tab .interface-abilities-section .items-header,
+.rolefight-tab-content .interface-abilities-section .items-header {
+  background-color: var(--nv-bg-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+
+.fight-tab .cyberdeck-installed-section .items-header,
+.rolefight-tab-content .cyberdeck-installed-section .items-header {
+  background-color: var(--nv-bg-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+
+.fight-tab .cyberdeck-rezzed-section .items-header,
+.rolefight-tab-content .cyberdeck-rezzed-section .items-header {
+  background-color: var(--nv-bg-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+
+.fight-tab .cyberdeck-installed-section,
+.fight-tab .cyberdeck-rezzed-section,
+.fight-tab .interface-abilities-section {
+  min-height: auto !important;
+}
+
+/* Installed programs grid */
+.cyberdeck-installed-software-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1.875rem 1.875rem !important;
+  grid-template-areas: "program-name program-attack-and-damage program-actions" !important;
+}
+
+.installed-program-name {
+  grid-area: program-name !important;
+  color: var(--nv-accent) !important;
+}
+
+.installed-program-attack-and-damage {
+  grid-area: program-attack-and-damage !important;
+  display: grid !important;
+  grid-template-columns: 0.938rem 0.938rem !important;
+  grid-template-areas: "program-attack program-damage" !important;
+}
+
+.installed-program-attack {
+  grid-area: program-attack !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.installed-program-defense {
+  grid-area: program-defense !important;
+}
+
+.installed-program-damage {
+  grid-area: program-damage !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.installed-program-actions {
+  grid-area: program-actions !important;
+}
+
+.installed-program-actions .fa-folder-minus,
+.cyberdeck-installed-software-list .fa-folder-minus {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* Rezzed programs grid */
+.cyberdeck-rezzed-software-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1.875rem 1.875rem 1.875rem 1.875rem 1.875rem 4.375rem !important;
+  grid-template-areas: "program-name program-per program-spd program-atk program-def program-rez-and-decrement program-reset" !important;
+}
+
+.rezzed-program-name {
+  grid-area: program-name !important;
+  color: var(--nv-accent) !important;
+}
+
+.rezzed-program-per {
+  grid-area: program-per !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-spd {
+  grid-area: program-spd !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-atk {
+  grid-area: program-atk !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-def {
+  grid-area: program-def !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-rez-and-decrement {
+  grid-area: program-rez-and-decrement !important;
+  display: grid !important;
+  grid-template-columns: 0.938rem 0.938rem !important;
+  grid-template-areas: "program-rez program-rez-decrement" !important;
+}
+
+.rezzed-program-rez {
+  grid-area: program-rez !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-rez-decrement {
+  grid-area: program-rez-decrement !important;
+}
+
+.rezzed-program-reset {
+  grid-area: program-reset !important;
+}
+
+.fight-tab .select-net-role,
+.rolefight-tab-content .select-net-role {
+  background-color: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+    26. INJURIES GRID (deprecated — moved to 24.4, kept for compatibility)
+   ========================================================== */
+.injuries-name {
+  color: var(--nv-accent) !important;
+}
+
+.injuries-desc {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.75rem !important;
+}
+
+.injuries-actions a {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   27. MOOK SHEET
+   ========================================================== */
+.mook-sheet {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.mook-sheet .mook-name {
+  color: var(--nv-accent) !important;
+  border-right: 1px solid var(--nv-border) !important;
+}
+
+.mook-sheet input {
+  background: transparent !important;
+  border: none !important;
+  color: var(--nv-accent) !important;
+}
+
+.mook-sheet .mook-stats-and-derived {
+  border: 1px solid var(--nv-border) !important;
+}
+
+.mook-stats .mook-stat {
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.mook-stat .rollable {
+  color: var(--nv-text-hint) !important;
+}
+
+.mook-stat .rollable:hover {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+.mook-stat .block-data input {
+  color: var(--nv-accent) !important;
+}
+
+.mook-hp .value,
+.mook-hp .max {
+  color: var(--nv-accent) !important;
+}
+
+.mook-hp .of {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.mook-wounded-stat {
+  color: var(--nv-color-danger) !important;
+}
+
+.mook-deathsave a {
+  color: var(--nv-accent-dim) !important;
+}
+
+.mook-gear, .mook-skills, .mook-special, .mook-crit, .mook-notes {
+  border: 1px solid var(--nv-bg-dark) !important;
+  margin-top: 0.25rem !important;
+}
+
+.mook-weapon-list .item,
+.mook-armor .item {
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+}
+
+.mook-notes-content {
+  color: var(--nv-text-hint) !important;
+}
+
+/* Mook limited sheet */
+.mook-sheet-limited {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   28. CONTAINER SHEET
+   ========================================================== */
+.container-sheet {
+  background-color: var(--nv-glass-dark) !important;
+}
+
+.container-sheet .left-pane .image-block {
+  border: 1px solid var(--nv-border) !important;
+}
+
+.container-sheet .left-pane .name-section,
+.container-sheet .left-pane .settings-section,
+.container-sheet .left-pane .settings-gm-section,
+.container-sheet .left-pane .eurobucks-section {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.container-sheet .left-pane .name-section input {
+  color: var(--nv-accent) !important;
+}
+
+.container-sheet .left-pane .eurobucks-section .eurobucks-label {
+  color: var(--nv-accent) !important;
+}
+
+.container-sheet .right-pane {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.container-sheet .fa-trash-can {
+  color: var(--nv-accent-dim) !important;
+}
+
+.container-sheet select {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   29. BLACK ICE SHEET
+   ========================================================== */
+.blackice-sheet {
+  background-color: var(--nv-glass-dark) !important;
+}
+
+.blackice-sheet input {
+  background-color: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.blackice-sheet .blackice-info {
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.blackice-sheet .blackice-info div {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.blackice-sheet .blackice-stats {
+  background-color: var(--nv-glass-dark) !important;
+}
+
+.blackice-sheet .blackice-stats div {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.blackice-stats-title {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.65rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.blackice-stats-value input {
+  color: var(--nv-accent) !important;
+  text-align: center !important;
+}
+
+.blackice-sheet .blackice-notes {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.blackice-actions a {
+  color: var(--nv-accent-dim) !important;
+}
+
+.blackice-sheet .blackice-image {
+  border: 1px solid var(--nv-border) !important;
+}
+
+/* ==========================================================
+   30. DEMON SHEET
+   ========================================================== */
+.demon-sheet {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.demon-sheet input {
+  background-color: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.demon-stats-title {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.65rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.demon-stats div {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.demon-stats-value input {
+  color: var(--nv-accent) !important;
+}
+
+.demon-notes {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+/* ==========================================================
+   31. ITEM SHEET
+   ========================================================== */
+.item-sheet .item-top-pane {
+  background-color: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.item-sheet .item-top-pane .item-details {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.item-details-name input {
+  color: var(--nv-accent) !important;
+  font-size: 1.2rem !important;
+}
+
+.item-details-info {
+  color: var(--nv-text-hint) !important;
+}
+
+.item-details-source {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.75rem !important;
+}
+
+.item-sheet .item-bottom-pane .item-bottom-tabs-section {
+  background-color: var(--nv-glass-deep) !important;
+}
+
+.item-sheet .item-bottom-pane .item-bottom-content-section {
+  border-color: var(--nv-border) !important;
+}
+
+.item-image i {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   32. ITEM DESCRIPTION TAB
+   ========================================================== */
+.item-description-tab {
+  background-color: var(--nv-glass-dark) !important;
+}
+
+.item-description-tab .item-summary-section {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.item-description-tab .item-description-section {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.summary-name {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.summary-value {
+  color: var(--nv-accent) !important;
+}
+
+.summary-effect-name {
+  color: var(--nv-accent-dim) !important;
+}
+
+.summary-effect-value {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   33. ITEM SETTINGS TAB
+   ========================================================== */
+.item-settings-tab {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.item-settings-section .setting-name {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.75rem !important;
+}
+
+.item-settings-section .setting-value {
+  color: var(--nv-accent) !important;
+}
+
+.item-checkbox {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.item-checkbox.active {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   34. ITEM EFFECTS TAB
+   ========================================================== */
+.item-effects-tab {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+/* ==========================================================
+   35. TEXT PILL / BADGE
+   ========================================================== */
+.text-pill {
+  background-color: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* ==========================================================
+   36. CHAT MESSAGES (BASE)
+   ========================================================== */
+.chat-message,
+.chat-message.whisper,
+.chat-message.emote {
+  font-family: "Tektur", monospace !important;
+  background: rgba(10, 10, 10, 0.6) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-left: 3px solid var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-008, rgba(255, 176, 0, 0.08)) !important;
+}
+
+.chat-message .message-header,
+.chat-message.whisper .message-header,
+.chat-message.emote .message-header {
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+}
+
+.chat-message .message-header .message-sender {
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+}
+
+.chat-message .message-header .message-metadata {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.chat-message img,
+.chat-message.whisper img,
+.chat-message.emote img {
+  border: none !important;
+}
+
+.chat-message footer,
+.chat-message.whisper footer,
+.chat-message.emote footer {
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* ==========================================================
+   37. ROLL CARDS — CPR BLOCK
+   ========================================================== */
+.rollcard {
+  font-family: "Tektur", monospace !important;
+}
+
+.cpr-block {
+  background-color: var(--nv-bg-dark) !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0.25rem !important;
+}
+
+.cpr-block::before {
+  position: absolute !important;
+  height: calc(100% - 0.5rem) !important;
+  width: calc(100% - 0.5rem) !important;
+  top: 0.25rem !important;
+  left: 0.25rem !important;
+  content: "" !important;
+  background-color: var(--nv-glass-mid) !important;
+  z-index: -1 !important;
+}
+
+.rollcard .text-center.text-padding-top.text-normal.text-semi {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   38. ROLL CARDS — D10
+   ========================================================== */
+.d10-rollcard-data,
+.d6-rollcard-data {
+  color: var(--nv-accent) !important;
+}
+
+.d10-dice-div,
+.d6-dice-div {
+  color: var(--nv-accent) !important;
+}
+
+.d10-number-div,
+.d6-number-div {
+  color: var(--nv-accent) !important;
+  font-size: 2.5rem !important;
+  text-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+.d10-number-div a,
+.d6-number-div a {
+  color: var(--nv-accent) !important;
+}
+
+.d10-number-div a:hover,
+.d6-number-div a:hover {
+  text-shadow: 0 0 12px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+.d10-data-div,
+.d6-data-div {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.75rem !important;
+}
+
+.d10-data-details,
+.d6-data-details {
+  color: var(--nv-text-hint) !important;
+}
+
+/* ==========================================================
+   39. ROLL CARD SUBTITLE
+   ========================================================== */
+.rollcard-subtitle-center {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.7rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.rollcard-subtitle-right a,
+.rollcard-subtitle-2-center {
+  color: var(--nv-accent-dim) !important;
+}
+
+.rollcard-subtitle-2-center {
+  font-size: 0.65rem !important;
+}
+
+/* ==========================================================
+   40. SUCCESS / FAILURE
+   ========================================================== */
+.roll-success {
+  color: var(--nv-color-success) !important;
+  text-shadow: 0 0 8px var(--nv-glow-success, rgba(0, 255, 170, 0.3)) !important;
+}
+
+.roll-failure {
+  color: var(--nv-color-danger) !important;
+  text-shadow: 0 0 8px var(--nv-glow-danger, rgba(255, 42, 42, 0.3)) !important;
+}
+
+/* ==========================================================
+   41. CHAT MODIFIERS
+   ========================================================== */
+.rollcard-modifiers {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.7rem !important;
+}
+
+.rollcard-modifiers span {
+  color: var(--nv-text-hint) !important;
+}
+
+/* ==========================================================
+   42. CHAT ACTION LINKS
+   ========================================================== */
+a.applyDamage,
+a.rollDamage,
+a.reverseDamage,
+a.displayInjury {
+  color: var(--nv-accent-dim) !important;
+  border: 1px solid var(--nv-border) !important;
+  padding: 0.125rem 0.375rem !important;
+  background: var(--nv-bg-dark) !important;
+}
+
+a.applyDamage:hover,
+a.rollDamage:hover,
+a.reverseDamage:hover,
+a.displayInjury:hover {
+  color: var(--nv-accent) !important;
+  border-color: var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-030) !important;
+  text-shadow: none !important;
+}
+
+a.inline-roll {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+a.inline-roll .dice-tooltip {
+  background: var(--nv-glass-mid) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+a.inline-roll .dice-tooltip .dice-rolls .roll {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   43. CRITICAL INJURY / HUMANITY CARDS
+   ========================================================== */
+.humanity-static-div {
+  color: var(--nv-accent) !important;
+  font-style: italic !important;
+}
+
+.rollcard-critinjury-icon {
+  border: 1px solid var(--nv-border) !important;
+}
+
+.rollcard-critinjury-data {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   44. CHAT INPUT & CONTROLS
+   ========================================================== */
+#chat-message {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+#chat-message:focus {
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020, rgba(255, 176, 0, 0.2)) !important;
+}
+
+#chat-controls .roll-type-select {
+  color: var(--nv-accent) !important;
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+#chat-controls .control-buttons {
+  color: var(--nv-accent) !important;
+}
+
+#chat-controls .control-buttons a {
+  color: var(--nv-text-hint) !important;
+}
+
+#chat-controls .control-buttons a:hover {
+  color: var(--nv-accent) !important;
+}
+
+#chat-form textarea {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+#chat-form textarea:focus {
+  border-color: var(--nv-accent) !important;
+}
+
+.chat-mode-indicator {
+  border-color: var(--nv-border) !important;
+  background: var(--nv-glass-mid) !important;
+  color: var(--nv-text-hint) !important;
+}
+
+/* ==========================================================
+   45. DIALOG SHEETS — GENERAL
+   ========================================================== */
+.dialog-sheet {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.dialog-header {
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.dialog-grid {
+  color: var(--nv-accent) !important;
+}
+
+.dialog-sheet hr {
+  border: none !important;
+  height: 1px !important;
+  background-image: linear-gradient(to right, var(--nv-text-black), var(--nv-accent), var(--nv-text-black)) !important;
+}
+
+/* ==========================================================
+   46. DIALOG ITEMS
+   ========================================================== */
+.dialog-list {
+  border: 1px solid var(--nv-bg-dark) !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.dialog-list li:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.dialog-list li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+.dialog-list .dialog-item.dialog-item-header {
+  background-color: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+}
+
+.dialog-item-name {
+  color: var(--nv-accent) !important;
+}
+
+.dialog-item-detail {
+  color: var(--nv-text-hint) !important;
+}
+
+.dialog-item-input {
+  color: var(--nv-accent) !important;
+}
+
+.dialog-item-input input[type="checkbox"] {
+  accent-color: var(--nv-accent) !important;
+}
+
+.dialog-item-input select {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   47. DIALOG BUTTONS
+   ========================================================== */
+.dialog-footer .cpr-dialog-button,
+.dialog .dialog-buttons button,
+.dialog .dialog-buttons button.default {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+.dialog-footer .cpr-dialog-button:hover,
+.dialog .dialog-buttons button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 10px var(--nv-glow-030) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
+/* ==========================================================
+   48. SITUATIONAL MODIFIERS (DIALOGS)
+   ========================================================== */
+.situational-mods {
+  color: var(--nv-accent) !important;
+}
+
+.situational-mods li {
+  border: 1px solid var(--nv-bg-dark) !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.situational-mod-name {
+  color: var(--nv-accent) !important;
+}
+
+.situational-mod-value {
+  color: var(--nv-text-hint) !important;
+}
+
+.situational-mod-input input {
+  background: transparent !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.mod-selected {
+  background-color: var(--nv-bg-dark) !important;
+}
+
+.total-mod-value {
+  color: var(--nv-accent-dim) !important;
+  font-weight: bold !important;
+}
+
+.toggle-show-mods {
+  color: var(--nv-accent-dim) !important;
+}
+
+.toggle-show-mods:hover {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+/* ==========================================================
+   49. LEDGER
+   ========================================================== */
+.ledger-grid {
+  background-color: var(--nv-glass-dark) !important;
+}
+
+.ledger-info,
+.ledger-edit {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.ledger-history {
+  background-color: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.ledger-history li:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.ledger-history li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+.ledger-transaction {
+  color: var(--nv-accent) !important;
+}
+
+.ledger-reason {
+  color: var(--nv-text-hint) !important;
+}
+
+.ledger-number {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.ledger-edit-modify {
+  color: var(--nv-accent) !important;
+}
+
+.ledger-edit-reason {
+  color: var(--nv-text-hint) !important;
+}
+
+.ledger-history-list .fa-trash-can {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   50. PROGRESS BAR
+   ========================================================== */
+.progress-container {
+  background: var(--nv-glass-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.progress-bar {
+  background-color: var(--nv-accent) !important;
+  opacity: 0.4 !important;
+}
+
+.progress-label-container {
+  color: var(--nv-accent) !important;
+}
+
+.progress-count {
+  color: var(--nv-text-hint) !important;
+}
+
+.progress-percent-container {
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* ==========================================================
+   51. TOOLTIPS
+   ========================================================== */
+#tooltip {
+  font-family: "Tektur", monospace !important;
+  border: 1px solid var(--nv-accent) !important;
+  background: var(--nv-glass-deep) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  color: var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+/* ==========================================================
+   52. COMPENDIUM
+   ========================================================== */
+#compendium h3 {
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020, rgba(255, 176, 0, 0.2)) !important;
+}
+
+#compendium ol.compendium-list {
+  color: var(--nv-text-hint) !important;
+}
+
+.compendium-folder-header {
+  background: var(--nv-glass-deep) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.compendium-folder-header .create-folder {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   53. HUD
+   ========================================================== */
+.control-icon {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.control-icon:hover {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-020) !important;
+}
+
+.control-icon.active {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
+}
+
+.dv-table-selector {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   54. PAUSE OVERRIDE
+   ========================================================== */
+#pause .pause-glitch {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   55. NETARCH TREE
+   ========================================================== */
+.item-netarch-grid {
+  background: var(--nv-glass-mid) !important;
+}
+
+.netarch-level {
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+}
+
+.netarch-dv {
+  color: var(--nv-accent-dim) !important;
+}
+
+.netarch-content {
+  color: var(--nv-text-hint) !important;
+}
+
+.netarch-actions a {
+  color: var(--nv-accent-dim) !important;
+}
+
+.sub-list .sub-list-header {
+  background-color: var(--nv-bg-dark) !important;
+  border-left: 3px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   56. ACTIVE EFFECTS SHEET
+   ========================================================== */
+.active-effects-sheet {
+  background: var(--nv-glass-mid) !important;
+}
+
+.active-effects-sheet .sheet-header {
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.active-effects-sheet .tabs {
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.active-effects-sheet .tab {
+  background: var(--nv-glass-mid) !important;
+}
+
+/* Changes list */
+.changes-list li:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.changes-list li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+.change-key input {
+  background: transparent !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.change-value input {
+  background: transparent !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.change-mode select {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+.change-header {
+  background: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   57. PROSEMIRROR / JOURNAL
+   ========================================================== */
+.journal-entry-content {
+  background: var(--nv-glass-mid) !important;
+}
+
+.prosemirror,
+.editor-content,
+.releasenotes,
+.journal-entry-content,
+.journal-page-content,
+.journal-sheet-container {
+  font-family: "Tektur", monospace !important;
+  color: var(--nv-accent) !important;
+}
+
+.prosemirror h1,
+.editor-content h1,
+.prosemirror h2,
+.editor-content h2 {
+  border-bottom-color: var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+.prosemirror h1::after,
+.editor-content h1::after,
+.prosemirror h2::after,
+.editor-content h2::after {
+  background-color: var(--nv-accent-dim) !important;
+}
+
+.prosemirror h3::before,
+.editor-content h3::before,
+.prosemirror h4::before,
+.editor-content h4::before {
+  color: var(--nv-accent) !important;
+}
+
+.prosemirror blockquote,
+.editor-content blockquote {
+  background: #111100 !important;
+  border-left: 3px solid var(--nv-accent) !important;
+}
+
+.prosemirror table tr:first-of-type,
+.editor-content table tr:first-of-type {
+  background: var(--nv-glass-deep) !important;
+  color: var(--nv-accent) !important;
+}
+
+.prosemirror table td,
+.editor-content table td {
+  border-color: var(--nv-border) !important;
+}
+
+.prosemirror table tbody tr:nth-of-type(even):not(:first-of-type),
+.editor-content table tbody tr:nth-of-type(even):not(:first-of-type) {
+  background: var(--nv-glass-mid) !important;
+  color: var(--nv-accent) !important;
+}
+
+.prosemirror table tbody tr:nth-of-type(odd):not(:first-of-type),
+.editor-content table tbody tr:nth-of-type(odd):not(:first-of-type) {
+  background: var(--nv-glass-light) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   58. FILEPICKER
+   ========================================================== */
+.filepicker .display-modes a {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-text-dimmed) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.filepicker .display-modes a.active {
+  background: var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  border-color: var(--nv-accent) !important;
+}
+
+.filepicker .favorites .path {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   59. MODULE MANAGEMENT / KEYBINDINGS
+   ========================================================== */
+#module-management label {
+  color: var(--nv-accent) !important;
+}
+
+#keybindings .binding .key.uneditable {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* ==========================================================
+   60. CARET ICONS (RESTORE FONTAWESOME)
+   ========================================================== */
+.fa-caret-right,
+.fa-caret-left,
+.fa-caret-up,
+.fa-caret-down {
+  background-image: none !important;
+  width: auto !important;
+  height: auto !important;
+  display: inline-block !important;
+  background-size: auto !important;
+  background-position: initial !important;
+  background-repeat: no-repeat !important;
+  color: var(--nv-accent) !important;
+}
+
+.fa-caret-right::before,
+.fa-caret-left::before,
+.fa-caret-up::before,
+.fa-caret-down::before {
+  content: "" !important;
+}
+
+/* ==========================================================
+   61. BUTTON ACTIVE / DISABLED STATES
+   ========================================================== */
+.button-active {
+  color: var(--nv-accent) !important;
+}
+
+.button-disabled {
+  color: var(--nv-border) !important;
+  cursor: default !important;
+}
+
+.button-disabled:hover {
+  text-shadow: none !important;
+}
+
+.pinned {
+  color: var(--nv-accent) !important;
+}
+
+.unpinned {
+  color: var(--nv-border) !important;
+}
+
+/* ==========================================================
+   62. SIDEBAR POPOUT LABELS
+   ========================================================== */
+#actors-popout,
+#cards-popout,
+#chat-popout,
+#combat-popout,
+#compendium-popout,
+#items-popout,
+#journal-popout,
+#playlists-popout,
+#scenes-popout,
+#settings-popout,
+#tables-popout,
+#macros-popout,
+#ui-right {
+  color: var(--nv-accent) !important;
+}
+
+#actors-popout button,
+#cards-popout button,
+#chat-popout button,
+#combat-popout button,
+#compendium-popout button,
+#items-popout button,
+#journal-popout button,
+#playlists-popout button,
+#scenes-popout button,
+#settings-popout button,
+#tables-popout button,
+#macros-popout button,
+#ui-right button {
+  color: var(--nv-accent) !important;
+  background-color: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-accent) !important;
+}
+
+#actors-popout button:hover,
+#cards-popout button:hover,
+#chat-popout button:hover,
+#combat-popout button:hover,
+#compendium-popout button:hover,
+#items-popout button:hover,
+#journal-popout button:hover,
+#playlists-popout button:hover,
+#scenes-popout button:hover,
+#settings-popout button:hover,
+#tables-popout button:hover,
+#macros-popout button:hover,
+#ui-right button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
+/* ==========================================================
+   63. NOTIFICATIONS / TOASTS
+   ========================================================== */
+.notification-toast {
+  background: var(--nv-glass-mid) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  border: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+.notification-toast.info {
+  border-color: var(--nv-accent) !important;
+}
+
+.notification-toast.error {
+  border-color: var(--nv-color-danger) !important;
+}
+
+.notification-toast.warning {
+  border-color: var(--nv-accent-dim) !important;
+}
+
+/* ==========================================================
+   64. FORM NOTES / HINTS
+   ========================================================== */
+form .notes,
+form .hint {
+  color: var(--nv-text-dimmed) !important;
+}
+
+form .form-group label {
+  color: var(--nv-accent) !important;
+}
+
+form span.units {
+  color: var(--nv-text-dimmed) !important;
+}
+
+form .form-group.slim .form-fields label {
+  color: var(--nv-text-dimmed) !important;
+}
+
+form textarea:read-only {
+  color: var(--nv-text-dimmed) !important;
+}
+
+form textarea {
+  color: var(--nv-accent) !important;
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+/* ==========================================================
+   65. WINDOW APPLICATION HEADERS / BORDERS
+   ========================================================== */
+.window-app {
+  box-shadow: 0 0 0 1px var(--nv-border), 0 0 12px var(--nv-glow-015) !important;
+}
+
+.window-app .window-header {
+  background: var(--nv-glass-deep) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  border-bottom: 2px solid var(--nv-glow-020) !important;
+  color: var(--nv-accent) !important;
+}
+
+.window-app .window-header .window-title {
+  color: var(--nv-accent) !important;
+}
+
+.window-app .window-header a {
+  color: var(--nv-text-hint) !important;
+}
+
+.window-app .window-header a:hover {
+  color: var(--nv-accent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  padding-left: 4px !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+.window-app .window-content {
+  background: var(--nv-glass-dark) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   66. CONFIGURATION WINDOWS
+   ========================================================== */
+.user-config .window-content .directory-list {
+  background: var(--nv-glass-mid) !important;
+  color: var(--nv-accent) !important;
+}
+
+code {
+  background-color: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   67. TABLE / ROLLTABLE
+   ========================================================== */
+.table-description {
+  color: var(--nv-text-hint) !important;
+}
+
+/* ==========================================================
+   68. ITEM CARD GRID (CHAT)
+   ========================================================== */
+.item-card-grid-container {
+  border: 1px solid var(--nv-bg-dark) !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.item-card-header {
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+}
+
+.item-card-name {
+  color: var(--nv-accent) !important;
+}
+
+.item-card-type {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.7rem !important;
+}
+
+.item-card-description {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.75rem !important;
+}
+
+/* ==========================================================
+   69. MIGRATION UI
+   ========================================================== */
+#cpr-migration {
+  color: var(--nv-accent) !important;
+}
+
+#cpr-migration .title {
+  color: var(--nv-accent) !important;
+}
+
+#cpr-migration .status {
+  color: var(--nv-text-hint) !important;
+}
+
+#cpr-migration .toggle {
+  background-color: var(--nv-border) !important;
+}
+
+#cpr-migration .toggle:before {
+  background-color: var(--nv-accent) !important;
+}
+
+#cpr-migration .toggle:checked {
+  background-color: var(--nv-accent) !important;
+}
+
+#cpr-migration .toggle:checked:before {
+  background-color: var(--nv-text-black) !important;
+}
+
+#cpr-migration form.compendia-selection .module-choices label {
+  border-color: var(--nv-border) !important;
+  color: var(--nv-text-hint) !important;
+}
+
+#cpr-migration form.compendia-selection .module-choices label:hover {
+  text-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+/* ==========================================================
+   70. DICE TRAY
+   ========================================================== */
+.dice-tray button {
+  color: var(--nv-accent-dim) !important;
+  background: transparent !important;
+}
+
+.dice-tray button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+/* ==========================================================
+   71. DF CHAT ENHANCEMENTS
+   ========================================================== */
+.dfce-cm-top {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+/* ==========================================================
+   72. CAUTIOUS GM'S PACK
+   ========================================================== */
+#chat-log .message.cgmp-desc {
+  background: var(--nv-glass-mid) !important;
+}
+
+#chat-log .message.emote .message-content,
+#chat-log .message.cgmp-desc .message-content {
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   73. ITEM PILES
+   ========================================================== */
+.item-piles-even-color:nth-child(even) {
+  background-color: var(--nv-glass-mid) !important;
+}
+
+.item-piles-even-color:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+}
+
+.item-piles-chat-card li:nth-child(odd) {
+  background-color: var(--nv-glass-light) !important;
+  border-color: var(--nv-border) !important;
+}
+
+.item-piles-item-take-button {
+  background-color: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   74. MONK'S ACTIVE TILE TRIGGERS
+   ========================================================== */
+.monks-active-tiles div[data-tab="triggers"] .action-items .action-style,
+.monks-active-tiles div[data-tab="triggers"] .action-items .details-style {
+  color: var(--nv-accent) !important;
+}
+
+.monks-active-tiles div[data-tab="triggers"] .action-items .entity-style {
+  color: var(--nv-text-hint) !important;
+}
+
+.monks-active-tiles .file-list .image-name {
+  color: var(--nv-accent) !important;
+}
+
+.monks-active-tiles.sheet .items-list .item-name h4 {
+  color: var(--nv-text-hint) !important;
+}
+
+.monks-active-tiles.sheet .items-list .item-header {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+}
+
+.monks-active-tiles.sheet .items-list .item-controls a {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Cyberpunk RED Importer dialog --- */
+.aolkin-cyberpunkred-importer {
+  color: var(--nv-accent) !important;
+}
+
+.dialog .character-import-code {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-accent) !important;
+  font-family: "Tektur", monospace !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.dialog .character-import-text {
+  margin-top: 8px !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.dialog .character-import-name {
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+}
+
+.dialog .character-import-name.invalid-code {
+  color: var(--nv-color-danger) !important;
+}
+
+.dialog .character-import-message {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.85em !important;
+}
+
+/* ==========================================================
+    75. PLAYER LIST / USER MANAGEMENT
+    ========================================================== */
+
+/* --- Player List (sidebar) --- */
+#players {
+  background: var(--nv-glass-dark) !important;
+}
+
+#players .player {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  transition: all 0.15s ease !important;
+}
+
+#players .player:hover {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020) !important;
+}
+
+#players .player .player-name {
+  color: var(--nv-accent) !important;
+}
+
+#players .player .player-active {
+  color: var(--nv-color-success) !important;
+}
+
+#players .player .player-offline {
+  color: var(--nv-text-dimmed) !important;
+}
+
+#players .player .player-avatar {
+  border: 1px solid var(--nv-border) !important;
+}
+
+#players .player .player-controls a {
+  color: var(--nv-accent) !important;
+}
+
+#players .player .player-controls a:hover {
+  color: var(--nv-accent-bright) !important;
+}
+
+#players .player .player-controls .kick-player {
+  color: var(--nv-color-danger) !important;
+}
+
+#players .player .player-controls .mute-player {
+  color: var(--nv-accent-dim) !important;
+}
+
+/* --- Player Config --- */
+.player-config .window-content {
+  background: var(--nv-glass-dark) !important;
+}
+
+.player-config .permission-table {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.player-config .permission-table th {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.player-config .permission-table td {
+  background: var(--nv-bg-nearblack) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.player-config .permission-table td select {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.player-config .dialog-buttons button.default {
+  background: var(--nv-color-success) !important;
+  color: var(--nv-text-black) !important;
+  border: 1px solid transparent !important;
+}
+
+.player-config .dialog-buttons button.default:hover {
+  filter: brightness(1.2) !important;
+}
+
+/* --- User Management --- */
+.user-config .user-list {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.user-config .user-list-header {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.user-config .user-list-row {
+  background: var(--nv-bg-nearblack) !important;
+  color: var(--nv-accent) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.user-config .user-list-row:hover {
+  background: var(--nv-bg-dark) !important;
+}
+
+.user-config .user-list-row .user-list-controls a {
+  color: var(--nv-accent) !important;
+}
+
+.user-config .user-list-row .user-list-controls .delete-user {
+  color: var(--nv-color-danger) !important;
+}
+
+.user-config .dialog-buttons button.default {
+  background: var(--nv-color-success) !important;
+  color: var(--nv-text-black) !important;
+  border: 1px solid transparent !important;
+}
+
+.user-config .dialog-buttons button.default:hover {
+  filter: brightness(1.2) !important;
+}
+
+button.delete,
+a[data-action="delete"] {
+  color: var(--nv-color-danger) !important;
+}
+
+/* ==========================================================
+    76. COMBAT TRACKER
+    ========================================================== */
+#combat {
+  background: var(--nv-glass-dark) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+#combat .combat-tracker-header {
+  background: var(--nv-bg-nearblack) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
+#combat .combat-tracker-header .encounter-title {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combat-tracker-header .encounter-controls a {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combat-tracker-header .encounter-controls a:hover {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+#combat #combat-tracker .combatant {
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+  transition: all 0.15s ease !important;
+}
+
+#combat #combat-tracker .combatant:hover {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020) !important;
+}
+
+#combat #combat-tracker .combatant.active {
+  border-left: 2px solid var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
+}
+
+#combat .combatant .token-initiative {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+#combat .combatant .token-name {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combatant .combatant-controls a {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combatant .combatant-controls a:hover {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+#combat .combatant .token-image {
+  border: 1px solid var(--nv-border) !important;
+}
+
+#combat-popout button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+/* ==========================================================
+    77. HOTBAR
+    ========================================================== */
+#hotbar {
+  background: var(--nv-glass-dark) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  border-top: 1px solid var(--nv-accent) !important;
+  box-shadow: 0 0 12px var(--nv-glow-015) !important;
+}
+
+#hotbar .hotbar-page {
+  background: transparent !important;
+}
+
+#hotbar .macro {
+  background: var(--nv-glass-light) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 2px !important;
+  transition: all 0.15s ease !important;
+}
+
+#hotbar .macro:hover {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+#hotbar .macro.active {
+  border-left: 2px solid var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
+}
+
+#hotbar .macro .macro-key {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
+#hotbar .bar-controls a {
+  color: var(--nv-accent) !important;
+}
+
+#hotbar .bar-controls a:hover {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+/* ==========================================================
+    78. VERTICAL CHARACTER SHEET — 830×690
+    ========================================================== */
+
+/* --- Base structural fallback (no depende de .character-vertical-sheet) --- */
+.sheet-vertical {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr !important;
+  background: transparent !important;
+}
+
+/* --- Window-app wrapper --- */
+.character-vertical-sheet .window-content {
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+.character-vertical-sheet .sheet-vertical {
+  background: transparent !important;
+  grid-template-columns: 2.5rem 1fr !important;
+}
+
+/* --- Sidebar navigation --- */
+.character-vertical-sheet .navtabs-side {
+  background: var(--nv-glass-deep) !important;
+  gap: 0.25rem !important;
+  border-right: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .navtabs-side .tab-button {
+  background: transparent !important;
+  color: var(--nv-text-dimmed) !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  font-size: 0.85rem !important;
+  border: none !important;
+  border-left: 2px solid transparent !important;
+  clip-path: none !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.character-vertical-sheet .navtabs-side .tab-button:hover {
+  color: var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015) 0%, transparent 100%) !important;
+  border-left-color: var(--nv-accent) !important;
+  box-shadow: 0 0 10px var(--nv-glow-030) !important;
+  text-shadow: 0 0 8px var(--nv-glow-050) !important;
+}
+
+.character-vertical-sheet .navtabs-side .tab-button.active {
+  color: var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020) 0%, transparent 100%) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
+  text-shadow: 0 0 6px var(--nv-glow-035) !important;
+}
+
+/* --- Sheet content wrapper --- */
+.character-vertical-sheet .sheet-content-vertical {
+  background: transparent !important;
+}
+
+/* --- Header (profile-header inside vertical) --- */
+.character-vertical-sheet .profile-header {
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  margin-bottom: 0.25rem !important;
+  padding: 0.25rem !important;
+  grid-template-columns: calc(4rem + 6px) 1fr 5rem !important;
+  grid-template-areas:
+    "portrait info  meta"
+    "portrait stats stats"
+    "portrait stats stats" !important;
+  gap: 0.125rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait {
+  background: transparent !important;
+  clip-path: none !important;
+  position: relative !important;
+  width: calc(4rem + 6px) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .profile-img {
+  border: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .overlay {
+  -webkit-text-stroke-color: var(--nv-border) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info {
+  padding-left: 0.25rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-name input,
+.character-vertical-sheet .profile-header .profile-info .profile-role input {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  height: 1.25rem !important;
+  font-family: "Tektur", monospace !important;
+  font-size: 0.7rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-name input:focus,
+.character-vertical-sheet .profile-header .profile-info .profile-role input:focus {
+  border-color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-eb,
+.character-vertical-sheet .profile-header .profile-info .profile-hp,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-eb span,
+.character-vertical-sheet .profile-header .profile-info .profile-hp span,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity span {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-hp .hp-value,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity .hum-value {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-hp .calculate-hp,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity .calculate-humanity {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .profile-wound {
+  position: absolute !important;
+  bottom: 0.188rem !important;
+  right: 0.188rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.125rem !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  padding: 0.063rem 0.125rem !important;
+  border-radius: 2px !important;
+  z-index: 2 !important;
+  line-height: 1 !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .profile-wound .wound-value {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.063rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .profile-wound img {
+  display: block !important;
+}
+
+/* --- Meta section (deathsaves, IP, reputation, eb) --- */
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+  padding: 0.1rem 0.25rem !important;
+  border-radius: 2px !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .deathsave-label,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .ip-label,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-label,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eb-label {
+  color: var(--nv-text-dimmed) !important;
+  white-space: nowrap !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .deathsave-value {
+  color: var(--nv-color-danger) !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  cursor: default !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-circle-up,
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-arrow-rotate-left,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .improvement-points-open-ledger,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-open-ledger,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eurobucks-open-ledger {
+  color: var(--nv-text-hint) !important;
+  cursor: pointer !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-circle-up:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-arrow-rotate-left:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .improvement-points-open-ledger:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-open-ledger:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eurobucks-open-ledger:hover {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .ip-value,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-value,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eb-value {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Stats bar --- */
+.character-vertical-sheet .stats-bar {
+  background: transparent !important;
+  margin-bottom: 0 !important;
+  padding: 0.125rem !important;
+  gap: 0.125rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+  flex: 1 0 calc(33.33% - 0.125rem) !important;
+  min-width: 2.25rem !important;
+  padding: 0.063rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-label {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.55rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-label:hover {
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-value {
+  color: var(--nv-accent) !important;
+  font-size: 0.7rem !important;
+  width: 1.75rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-of .stat-value {
+  width: 1.25rem !important;
+  font-size: 0.6rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-of .stat-sep {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.6rem !important;
+}
+
+/* --- Tab content scroll area --- */
+.character-vertical-sheet .tab-content-vertical {
+  background: var(--nv-glass-light) !important;
+  padding: 0.25rem !important;
+}
+
+/* --- Skills section --- */
+.character-vertical-sheet .skills-section .skills-filter-bar {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .skills-section .skills-filter-bar input {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  height: 1.25rem !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.character-vertical-sheet .skills-section .skills-filter-bar .fa-xmark {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .skills-section .skills-filter-bar .fa-xmark:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Skills list items --- */
+.character-vertical-sheet .items-header {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-text-hint) !important;
+  font-size: 0.6rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.character-vertical-sheet .items-list .item {
+  background: var(--nv-glass-deep) !important;
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  font-size: 0.65rem !important;
+}
+
+.character-vertical-sheet .items-list .item:nth-child(even) {
+  background: var(--nv-glass-mid) !important;
+}
+
+.character-vertical-sheet .items-list .item:hover {
+  background: var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .item-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .items-list .item-name {
+  overflow: visible !important;
+}
+
+.character-vertical-sheet .item-detail {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .skill-mod-value {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .skill-level input,
+.character-vertical-sheet .skill-base {
+  color: var(--nv-accent-bright) !important;
+}
+
+.character-vertical-sheet .skill-favorite {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .skill-favorite.favorite {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Text pills (stat labels inside skills) --- */
+.character-vertical-sheet .text-pill {
+  background: var(--nv-bg-nearblack) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-size: 0.55rem !important;
+}
+
+/* --- Role/Fight tab --- */
+.character-vertical-sheet .rolefight-tab-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .role-section {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .combat-section {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+}
+
+/* Ensure gear tab items with sub-lists wrap properly */
+.character-vertical-sheet .items-list .item.flexrow {
+  flex-wrap: wrap !important;
+}
+
+/* Prevent gear-actions from being clipped */
+.character-vertical-sheet .item-detail.gear-actions {
+  overflow: visible !important;
+}
+
+/* --- Gear tab --- */
+.character-vertical-sheet .gear-tab-data {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .gear-section-header {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .gear-name,
+.character-vertical-sheet .gear-data {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .gear-amount-value {
+  color: var(--nv-accent-bright) !important;
+}
+
+.character-vertical-sheet .gear-amount-input {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* --- Cyberware tab --- */
+.character-vertical-sheet .cyberware-tab .cyberware-list {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .cyberware-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .cyberware-data {
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* --- Effects tab --- */
+.character-vertical-sheet .effects-list {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .effects-category {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-text-hint) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .effect {
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .effect:hover {
+  background: var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .effect-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .effect-source {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .effect-control {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .effect-control:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Lifepath tab --- */
+.character-vertical-sheet .lifepath-section {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+/* --- Fight tab (weapons & armor grids) --- */
+.character-vertical-sheet .weapon-grid,
+.character-vertical-sheet .armor-grid {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .weapon-name,
+.character-vertical-sheet .armor-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .weapon-info,
+.character-vertical-sheet .armor-1-stats,
+.character-vertical-sheet .armor-2-stats {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .weapon-attack,
+.character-vertical-sheet .weapon-damage {
+  color: var(--nv-color-danger) !important;
+}
+
+.character-vertical-sheet .weapon-actions a,
+.character-vertical-sheet .armor-1-actions a,
+.character-vertical-sheet .armor-2-actions a {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .weapon-actions a:hover,
+.character-vertical-sheet .armor-1-actions a:hover,
+.character-vertical-sheet .armor-2-actions a:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Buttons inside vertical sheet --- */
+.character-vertical-sheet button {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.character-vertical-sheet button:hover {
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+/* --- Inputs inside vertical sheet --- */
+.character-vertical-sheet input[type="text"],
+.character-vertical-sheet input[type="number"] {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.character-vertical-sheet input[type="text"]:focus,
+.character-vertical-sheet input[type="number"]:focus {
+  border-color: var(--nv-accent) !important;
+}
+
+/* --- Collapsible sections --- */
+.character-vertical-sheet .collapsible .collapse-icon,
+.character-vertical-sheet .collapsible .expand-icon {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .collapsible .collapse-icon:hover,
+.character-vertical-sheet .collapsible .expand-icon:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Injury grid --- */
+.character-vertical-sheet .injuries-grid {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .injuries-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .injuries-desc {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .injuries-effects {
+  color: var(--nv-color-danger) !important;
+}
+
+/* ==========================================================
+    79. GEAR TAB — INSTALLED UPGRADES / SUB-LIST FIXES
+    ========================================================== */
+
+/* Sub-list items: restore transparent background (system overrides) */
+.items-list .sub-list li.item,
+.items-list .sub-list li {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.items-list .sub-list li.item:hover {
+  background: var(--nv-bg-dark) !important;
+}
+
+/* Toggle chevron: ensure visibility and clickability */
+.items-list .item-name a.toggle-installed-visibility {
+  opacity: 1 !important;
+  flex: 0 0 2rem !important;
+  min-width: 1.2rem !important;
+  cursor: pointer !important;
+}
+
+.items-list .item-name a.toggle-installed-visibility i {
+  color: var(--nv-accent) !important;
+  transition: transform 150ms ease-in-out !important;
+}
+
+.items-list .item-name a.toggle-installed-visibility:hover {
+  opacity: 1 !important;
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+/* Sub-list container: ensure proper grid layout */
+.items-list .sub-list {
+  min-width: 100% !important;
+  display: grid !important;
+}
+
+/* Sub-list items text color */
+.items-list .sub-list .item-name {
+  color: var(--nv-accent) !important;
+}
+
+.items-list .sub-list .item-detail {
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* ==========================================================
+   80. PP NOTIFICATION BUTTON (sobre retrato)
+   ========================================================== */
+
+.character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn {
+  position: absolute !important;
+  top: 0.188rem !important;
+  right: 0.188rem !important;
+  z-index: 3 !important;
+  cursor: pointer !important;
+  font-size: 0.7rem !important;
+  line-height: 1 !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease !important;
+  /* Glow ámbar siempre visible */
+  text-shadow:
+    0 0 4px var(--nv-glow-040),
+    0 0 8px var(--nv-glow-020) !important;
+  /* Rojo por defecto (sin puntos suficientes) */
+  color: var(--nv-color-danger) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn:hover {
+  text-shadow:
+    0 0 6px var(--nv-glow-050),
+    0 0 12px var(--nv-glow-030) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn.pp-has-points {
+  /* Verde brillante cuando tiene puntos suficientes */
+  --nv-color-success: #00ffaa;
+  color: var(--nv-color-success) !important;
+  text-shadow:
+    0 0 4px var(--nv-glow-success-040),
+    0 0 8px var(--nv-glow-success-020) !important;
+}
+
+/* ==========================================================
+   81. PP UPGRADE DIALOG — WINDOW & TABS
+   ========================================================== */
+
+.pp-upgrade-dialog-window {
+  border: 1px solid var(--nv-border) !important;
+  box-shadow: 0 0 20px var(--nv-glow-020) !important;
+}
+
+.pp-upgrade-dialog-window .window-content {
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(6px) !important;
+  color: var(--nv-text-dimmed) !important;
+  font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
+  font-size: 0.8rem !important;
+  text-shadow: 0 0 3px var(--nv-glow-015) !important;
+}
+
+.pp-upgrade-dialog-window .pp-tabs {
+  display: flex !important;
+  gap: 0 !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  background: var(--nv-glass-deep) !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab {
+  flex: 1 !important;
+  padding: 0.5rem 0.25rem !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  color: var(--nv-text-dimmed) !important;
+  background: var(--nv-glass-deep) !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.2s ease !important;
+  font-size: 0.75rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab:hover {
+  color: var(--nv-accent-dim) !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab.active {
+  color: var(--nv-accent) !important;
+  background: var(--nv-glass-mid) !important;
+  border-bottom-color: var(--nv-accent) !important;
+  text-shadow: 0 0 6px var(--nv-glow-040) !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab i {
+  margin-right: 0.25rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab-content {
+  padding: 0.5rem !important;
+  height: calc(100% - 2.5rem) !important;
+  overflow-y: auto !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab-pane {
+  display: none !important;
+  height: 100% !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab-pane.active {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ==========================================================
+   82. PP UPGRADE DIALOG — SKILLS TAB
+   ========================================================== */
+
+.pp-upgrade-dialog-window .pp-skills-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 2 !important;
+  background: var(--nv-glass-dark) !important;
+  padding: 0.5rem !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  text-align: right !important;
+  margin: -0.5rem -0.5rem 0.5rem -0.5rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-remaining-label {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.75rem !important;
+  text-shadow: 0 0 3px var(--nv-glow-008) !important;
+}
+
+.pp-upgrade-dialog-window .pp-remaining-value {
+  color: var(--nv-accent) !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 6px var(--nv-glow-040) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skills-list,
+.pp-upgrade-dialog-window .pp-role-list {
+  flex: 1 !important;
+  overflow-y: auto !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-row,
+.pp-upgrade-dialog-window .pp-role-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  padding: 0.2rem 0.5rem !important;
+  border-bottom: 1px solid var(--nv-glass-light) !important;
+  transition: background 0.15s ease !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-row:hover,
+.pp-upgrade-dialog-window .pp-role-row:hover {
+  background: var(--nv-glass-mid) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skills-list .pp-skill-row:nth-child(even):not(:hover) {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-list .pp-role-row:nth-child(even):not(:hover) {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-name,
+.pp-upgrade-dialog-window .pp-role-name {
+  flex: 1 !important;
+  color: var(--nv-text-hint) !important;
+  font-size: 0.75rem !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  text-shadow: 0 0 3px var(--nv-glow-008) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-diff {
+  color: var(--nv-color-danger) !important;
+  font-size: 0.65rem !important;
+  margin-right: 0.25rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-source {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.65rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-category-header {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.2rem 0.5rem !important;
+  margin-top: 0.25rem !important;
+  background: var(--nv-glass-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+.pp-upgrade-dialog-window .pp-category-header span {
+  color: var(--nv-accent-dim) !important;
+  font-size: 0.65rem !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: 0 0 4px var(--nv-glow-015) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  padding: 0 !important;
+  border: 1px solid var(--nv-border) !important;
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+  cursor: pointer !important;
+  font-size: 0.8rem !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  border-radius: 2px !important;
+  transition: all 0.15s ease !important;
+  flex: 0 0 1.5rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn:hover:not(:disabled) {
+  background: var(--nv-bg-dark) !important;
+  border-color: var(--nv-accent-dim) !important;
+  text-shadow: 0 0 4px var(--nv-glow-040) !important;
+  transform: scale(1.15) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn:active:not(:disabled) {
+  transform: scale(0.95) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-level,
+.pp-upgrade-dialog-window .pp-role-rank {
+  width: 1.5rem !important;
+  text-align: center !important;
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+  font-size: 0.8rem !important;
+  flex: 0 0 1.5rem !important;
+  text-shadow: 0 0 5px var(--nv-glow-030) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-cost,
+.pp-upgrade-dialog-window .pp-role-cost {
+  width: 4rem !important;
+  text-align: right !important;
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.7rem !important;
+  flex: 0 0 4rem !important;
+  text-shadow: 0 0 3px var(--nv-glow-005) !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-divider {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.4rem 0.5rem !important;
+  margin-top: 0.5rem !important;
+  border-top: 1px solid var(--nv-accent-dim) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  background: var(--nv-glass-deep) !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-divider span {
+  color: var(--nv-accent) !important;
+  font-size: 0.7rem !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+.pp-upgrade-dialog-window .pp-pp-bar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  padding: 0.25rem 0.5rem !important;
+  margin: 0.25rem 0 !important;
+}
+.pp-upgrade-dialog-window .pp-pp-bar-track {
+  flex: 1 !important;
+  height: 0.4rem !important;
+  background: var(--nv-glass-deep) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 2px !important;
+  overflow: hidden !important;
+}
+.pp-upgrade-dialog-window .pp-pp-bar-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: var(--nv-accent) !important;
+  transition: width 0.2s ease !important;
+  border-radius: 1px !important;
+}
+.pp-upgrade-dialog-window .pp-pp-bar-label {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.65rem !important;
+  flex: 0 0 auto !important;
+}
+
+.pp-upgrade-dialog-window .pp-skills-footer {
+  position: sticky !important;
+  bottom: 0 !important;
+  z-index: 3 !important;
+  display: flex !important;
+  gap: 0.5rem !important;
+  align-items: center !important;
+  padding: 0.6rem 0.5rem !important;
+  margin: 0.5rem -0.5rem -0.5rem -0.5rem !important;
+  background: var(--nv-glass-dark) !important;
+  border-top: 1px solid var(--nv-border) !important;
+}
+
+.pp-upgrade-dialog-window .pp-footer-cost {
+  flex: 1 !important;
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.75rem !important;
+  text-shadow: 0 0 3px var(--nv-glow-008) !important;
+}
+
+.pp-upgrade-dialog-window .pp-total-cost {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 5px var(--nv-glow-030) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn {
+  padding: 0.5rem 1rem !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 3px !important;
+  cursor: pointer !important;
+  font-size: 0.75rem !important;
+  font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
+  transition: all 0.15s ease !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-color-success) !important;
+  border-color: var(--nv-color-success) !important;
+  font-weight: bold !important;
+  letter-spacing: 0.04em !important;
+}
+.pp-upgrade-dialog-window .pp-btn-save:not(:disabled) {
+  box-shadow: 0 0 8px var(--nv-glow-success) !important;
+  border-color: var(--nv-color-success) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save:hover:not(:disabled) {
+  background: var(--nv-glass-mid) !important;
+  text-shadow: 0 0 6px var(--nv-glow-success) !important;
+  box-shadow: 0 0 14px var(--nv-glow-success) !important;
+  transform: scale(1.05) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+  filter: grayscale(0.5) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-cancel {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-text-dimmed) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-cancel:hover {
+  background: var(--nv-glass-mid) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   83. PP UPGRADE DIALOG — STATS & GUIDE TABS
+   ========================================================== */
+
+.pp-upgrade-dialog-window .pp-stats-content {
+  padding: 0.5rem !important;
+  color: var(--nv-text) !important;
+  line-height: 1.6 !important;
+  font-size: 0.75rem !important;
+  overflow-y: auto !important;
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 3px !important;
+  text-shadow: 0 0 3px var(--nv-glow-015) !important;
+}
+
+.pp-upgrade-dialog-window .pp-guide-content {
+  padding: 0.25rem !important;
+  color: var(--nv-text-dimmed) !important;
+  line-height: 1.6 !important;
+  font-size: 0.75rem !important;
+  overflow-y: auto !important;
+  text-shadow: 0 0 3px var(--nv-glow-015) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content h1,
+.pp-upgrade-dialog-window .pp-guide-content h1 {
+  color: var(--nv-accent-bright) !important;
+  font-size: 1rem !important;
+  text-shadow: 0 0 8px var(--nv-glow-050) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  padding-bottom: 0.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content h2,
+.pp-upgrade-dialog-window .pp-guide-content h2 {
+  color: var(--nv-accent) !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content h3,
+.pp-upgrade-dialog-window .pp-guide-content h3 {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.8rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.15rem !important;
+  text-shadow: 0 0 4px var(--nv-glow-015) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content p,
+.pp-upgrade-dialog-window .pp-guide-content p {
+  margin-bottom: 0.4rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content table,
+.pp-upgrade-dialog-window .pp-guide-content table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 0.5rem 0 !important;
+  font-size: 0.7rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content th,
+.pp-upgrade-dialog-window .pp-guide-content th {
+  background: var(--nv-glass-dark) !important;
+  color: var(--nv-accent) !important;
+  padding: 0.2rem 0.4rem !important;
+  border: 1px solid var(--nv-border) !important;
+  text-align: center !important;
+  font-size: 0.7rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content td,
+.pp-upgrade-dialog-window .pp-guide-content td {
+  padding: 0.15rem 0.4rem !important;
+  border: 1px solid var(--nv-border) !important;
+  text-align: center !important;
+  text-shadow: 0 0 3px var(--nv-glow-005) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content .pp-no {
+  color: var(--nv-color-danger) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content .pp-yes {
+  color: var(--nv-color-success) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content .pp-maybe {
+  color: var(--nv-accent-dim) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content hr,
+.pp-upgrade-dialog-window .pp-guide-content hr {
+  border: none !important;
+  border-top: 1px solid var(--nv-border) !important;
+  margin: 0.75rem 0 !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content em,
+.pp-upgrade-dialog-window .pp-guide-content em {
+  color: var(--nv-accent-dim) !important;
+  font-style: italic !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content strong,
+.pp-upgrade-dialog-window .pp-guide-content strong {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-015) !important;
+}
+
+.pp-upgrade-dialog-window .pp-guide-content ul {
+  margin: 0.25rem 0 !important;
+  padding-left: 1.25rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-guide-content li {
+  margin-bottom: 0.3rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-threshold-setting {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-top: 0.75rem !important;
+  padding: 0.5rem !important;
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 3px !important;
+}
+
+.pp-upgrade-dialog-window .pp-threshold-setting label {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.75rem !important;
+  text-shadow: 0 0 3px var(--nv-glow-008) !important;
+}
+
+.pp-upgrade-dialog-window .pp-threshold-input {
+  width: 4rem !important;
+  text-align: center !important;
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
+  padding: 0.2rem !important;
+  border-radius: 2px !important;
+}
+
+/* ==========================================================
+    84. COMBAT GALLERY — HOJA VERTICAL (2 columnas, tarjetas)
+   ========================================================== */
+
+.character-vertical-sheet .rolefight-tab-content .weapons-list,
+.character-vertical-sheet .rolefight-tab-content .melee-weapons-list,
+.fight-tab .weapons-list,
+.fight-tab .melee-weapons-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.15rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .armor-list,
+.fight-tab .armor-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.15rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .injuries-content,
+.fight-tab .injuries-content {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.15rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-grid,
+.character-vertical-sheet .rolefight-tab-content .armor-grid,
+.character-vertical-sheet .rolefight-tab-content .injuries-grid,
+.fight-tab .weapon-grid,
+.fight-tab .armor-grid,
+.fight-tab .injuries-grid {
+  margin: 0 !important;
+  min-height: 2.8rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-image,
+.character-vertical-sheet .rolefight-tab-content .armor-image,
+.character-vertical-sheet .rolefight-tab-content .injuries-image,
+.fight-tab .weapon-image,
+.fight-tab .armor-image,
+.fight-tab .injuries-image {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-name a,
+.character-vertical-sheet .rolefight-tab-content .armor-name a,
+.fight-tab .weapon-name a,
+.fight-tab .armor-name a {
+  font-size: 0.7rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-info .text-pill,
+.fight-tab .weapon-info .text-pill {
+  font-size: 0.55rem !important;
+  padding: 0 0.2rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-ammo,
+.fight-tab .weapon-ammo {
+  font-size: 0.65rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .fire-checkbox,
+.fight-tab .fire-checkbox {
+  font-size: 0.6rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .role-section,
+.character-vertical-sheet .rolefight-tab-content .interface-abilities-section,
+.character-vertical-sheet .rolefight-tab-content .cyberdeck-installed-section,
+.character-vertical-sheet .rolefight-tab-content .cyberdeck-rezzed-section {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  padding: 0.15rem !important;
+}

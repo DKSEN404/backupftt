@@ -1,0 +1,10 @@
+{
+  "label": "Vestimenta",
+  "mapping": {},
+  "entries": {
+    "Masetto Holo-Wear": {
+      "name": "Masetto Holo-Wear",
+      "description": "<p>Ropa holográfica que puede ser desactivada por explosiones EMP durante un minuto. Puede cambiar de estilo con una acción si se ha comprado.</p>\n"
+    }
+  }
+}

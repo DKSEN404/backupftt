@@ -1,0 +1,68 @@
+{
+  "id": "cpr-night-city-weather-generator",
+   "title": "CPR Night City Weather Generator",
+  "version": "1.1.2",
+  "url": "https://github.com/Flatline42/FVTT-Cyberpunk-Red-Night-City-Weather",
+  "manifest": "https://github.com/Flatline42/FVTT-Cyberpunk-Red-Night-City-Weather/releases/download/1.1.2/module.json",
+  "download": "https://github.com/Flatline42/FVTT-Cyberpunk-Red-Night-City-Weather/releases/download/1.1.2/cpr-night-city-weather-generator.zip",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11"
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "foundryvtt-simple-calendar",
+        "type": "module",
+        "compatibility": {}
+      }
+    ],
+    "systems": [
+      {
+        "id": "cyberpunk-red-core",
+        "type": "system"
+      }
+    ]
+  },
+  "description": "Night City weather generator using the R Talsorian Weather DLC available here:\nhttps://rtalsoriangames.com/downloadable-content/\n\nAdditionally used icons from \nhttps://game-icons.net\nLicense: CC BY 3.0\nhttps://creativecommons.org/licenses/by/3.0/\n\nCPR Night City Weather Generator is unofficial content provided under the Homebrew Content Policy of R. Talsorian Games and is not approved or endorsed by RTG. This content references materials that are the property of R. Talsorian Games and its licensees.",
+  "authors": [
+    {
+      "name": "TheFlatline"
+    }
+  ],
+  "packs": [
+    {
+      "name": "night-city-weather-tables",
+      "label": "Night City Weather Tables",
+      "path": "packs/night-city-weather-tables",
+      "type": "RollTable",
+      "system": "cyberpunk-red-core",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "night-city-weather-macros",
+      "label": "Night City Weather Macros",
+      "path": "packs/night-city-weather-macros",
+      "type": "Macro",
+      "system": "cyberpunk-red-core",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "night-city-weather-journal",
+      "label": "Night City Weather Journal",
+      "path": "packs/night-city-weather-journal",
+      "type": "JournalEntry",
+      "system": "cyberpunk-red-core",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ]
+}

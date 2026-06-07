@@ -1,0 +1,56 @@
+# Preload Manager
+
+FoundryVTT Module to help Game Master track status of preloading scenes and playlist audio for connected users.
+
+## Features
+- ### Scene Preloading:<br>
+<img alt="image" src="http://thejoester.com/foundryvtt/preload-tracker/pt1.gif" /><br>
+
+- ### Race mode:<br>
+<img width="493" height="278" alt="image" src="https://github.com/user-attachments/assets/7224c520-dd6e-460a-b812-4b5b6bf3f04d" /><br>
+<img width="297" height="190" alt="image" src="https://github.com/user-attachments/assets/16c6bec7-f6c9-4873-812f-2d9adf27f762" /><br>
+- ### Adds marker indicators of which players are on which scene<br>
+<img width="296" height="290" alt="image" src="https://github.com/user-attachments/assets/d1a6fba1-f435-4f21-be31-33ee07198c6d" /><br>
+- ### Added Preload option to Sidebar scene list:<br>
+<img width="306" height="308" alt="image" src="https://github.com/user-attachments/assets/2667d18c-39ad-489e-9d01-1fc0b0ddd751" /><br>
+- ### Audio preloading:<br>
+<img width="335" height="233" alt="image" src="https://github.com/user-attachments/assets/091080e8-ed0d-417d-aa54-f57664b4d0c3" />
+<br> <br>
+
+## Video Demo: 
+[https://www.youtube.com/watch?v=OqG82XA9e8I](https://www.youtube.com/watch?v=OqG82XA9e8I)
+
+Race Mode: [https://youtu.be/j-SgdS8CVY4](https://youtu.be/j-SgdS8CVY4)
+
+<br/><a href='https://ko-fi.com/thejoester/tip' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+## Credits
+I would like to extend a thanks to the following people for helping contribute to this module!
+
+### Translations
+- Polish (pl): [Lioheart](https://github.com/Lioheart)
+- French (fr): [Rectulo](https://gitlocalize.com/users/rectulo)
+
+### Images 
+Images obtained from https://www.svgrepo.com/ Creative Commons license
+- Rabbit: https://www.svgrepo.com/svg/17465/rabbit-shape
+- Turtle: https://www.svgrepo.com/svg/2485/turtle-silhouette
+- Trophy: https://www.svgrepo.com/svg/146497/trophy
+
+## Contribute
+
+If you would like to contribute to the localization, you can do so in one of these ways: 
+
+#### 1. Translate through [Gitlocalize](https://gitlocalize.com/repo/10477). 
+
+#### 2. Fork and Submit a Pull Request:
+1. [Fork the repository](https://www.youtube.com/watch?v=f5grYMXbAV0) (copy main branch only).
+2. Then download or copy the [en.json](https://github.com/thejoester/preload-tracker/blob/main/lang/en.json) file.
+3. Rename it to the proper [language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) (for example es.json for Spanish language),
+4. Edit the file translating the text in quotes on the RIGHT SIDE of the colon.
+5. When done upload the new language file to your fork in the **lang/** folder,
+6. Click the "Contribute" button and "Open Pull Request".
+
+#### 3. Upload file as Issue:
+1. Download the [en.json](https://github.com/thejoester/preload-tracker/blob/main/lang/en.json) file,
+2. Rename it to the Open up an [Issue](https://github.com/thejoester/preload-tracker/issues) and attach the file. 
